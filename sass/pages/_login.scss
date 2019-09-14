@@ -1,9 +1,9 @@
-@import '_variables';
 
 body {
   background-color: $color-primary-bg;
 }
 
-.mainNav a {
+#mainNav a {
   color: $color-primary-font;
+  
 }

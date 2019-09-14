@@ -1,3 +1,9 @@
+body {
+  background-color: #a6d5ce; }
+
+#mainNav a {
+  color: #051d4d; }
+
 .navbar-toggler {
   border: none; }
 
