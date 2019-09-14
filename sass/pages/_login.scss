@@ -1,9 +1,12 @@
-@import '_variables';
-
 body {
   background-color: $color-primary-bg;
 }
 
 .mainNav a {
   color: $color-primary-font;
+}
+
+#loginDiv {
+  position: absolute;
+  margin-top: 100px;
 }

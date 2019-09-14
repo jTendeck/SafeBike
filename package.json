@@ -4,7 +4,8 @@
   "description": "SafeBike app, assist bikers at the ride events",
   "main": "index.js",
   "dependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "sass": "^1.22.12"
   },
   "devDependencies": {},
   "scripts": {

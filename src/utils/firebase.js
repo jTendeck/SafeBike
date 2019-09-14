@@ -18,6 +18,7 @@ const txtPassword = document.getElementById("passwordField");
 const btnLogin = document.getElementById("loginButton");
 const btnSignUp = document.getElementById("signUpButton");
 const btnLogOut = document.getElementById("logOutButton");
+const btnCreateAccount = document.getElementById("createAccount");
 
 // Add Login Event
 btnLogin.addEventListener('click', e => {
@@ -29,14 +30,19 @@ btnLogin.addEventListener('click', e => {
     promise.catch(e => console.log(e.message));
 });
 
+// // Add Signup Event
+// btnSignUp.addEventListener('click', e => {
+//     const email = txtEmail.value;
+//     const password = txtPassword.value;
+//     const auth = firebase.auth();
+//     //Sign in
+//     const promise = auth.createUserWithEmailAndPassword(email,password);
+//     promise.catch(e => console.log(e.message));
+// });
+
 // Add Signup Event
 btnSignUp.addEventListener('click', e => {
-    const email = txtEmail.value;
-    const password = txtPassword.value;
-    const auth = firebase.auth();
-    //Sign in
-    const promise = auth.createUserWithEmailAndPassword(email,password);
-    promise.catch(e => console.log(e.message));
+    window.location = 'signup.html';
 });
 
 // Add Logout Function
@@ -59,4 +65,4 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     }
 });
 
-  console.log("Firebase loaded");
+console.log("Firebase loaded");

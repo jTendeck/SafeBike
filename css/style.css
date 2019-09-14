@@ -1,3 +1,13 @@
+body {
+  background-color: #a6d5ce; }
+
+.mainNav a {
+  color: #051d4d; }
+
+#loginDiv {
+  position: absolute;
+  margin-top: 100px; }
+
 .navbar-toggler {
   border: none; }
 
