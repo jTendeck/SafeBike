@@ -20,23 +20,13 @@ $(document).ready(function() {
     enableHighAccuracy: true
   });
 
-
-
-
- 
   // L.Routing.control.spliceWaypoints(1, 0, L.latLng(49.287414, -123.120618));
- 
 
   // L.Rrouting.control.setWaypoints([
   //   L.latLng(49.287414, -123.120618),
   // ]);
 
   getRoute(map);
-
-
-
-
-
 
   //Find user location and display marker
   function onLocationFound(e) {
@@ -48,10 +38,6 @@ $(document).ready(function() {
     L.circle(e.latlng, radius).addTo(map);
   }
 
-
-
-
-
   map.on('locationfound', onLocationFound);
 
   function onLocationError(e) {
@@ -60,8 +46,6 @@ $(document).ready(function() {
   
   map.on('locationerror', onLocationError);
 
-
-  
 });
 
   function getRoute(map) {
@@ -73,8 +57,6 @@ $(document).ready(function() {
   });
 
 }
-
-
 
 function addRoute(route, map) {
 
@@ -103,5 +85,3 @@ function addRoute(route, map) {
   }).addTo(map);
 
 }
-
-
