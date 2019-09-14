@@ -1,0 +1,23 @@
+{
+  "name": "safebike",
+  "version": "1.0.0",
+  "description": "SafeBike app, assist bikers at the ride events",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksandra-codes/SafeBike.git"
+  },
+  "author": "vanhacks2019 tema",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleksandra-codes/SafeBike/issues"
+  },
+  "homepage": "https://github.com/aleksandra-codes/SafeBike#readme"
+}
