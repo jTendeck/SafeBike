@@ -80,7 +80,7 @@ function addRoute(route, map) {
 
   L.Routing.control({
     waypoints: waypointsArray,
-    routeWhileDragging: true,
+    routeWhileDragging: false,
     createMarker: function() { return null; }
   }).addTo(map);
 
