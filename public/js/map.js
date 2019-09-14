@@ -20,12 +20,6 @@ $(document).ready(function() {
     enableHighAccuracy: true
   });
 
-  // L.Routing.control.spliceWaypoints(1, 0, L.latLng(49.287414, -123.120618));
-
-  // L.Rrouting.control.setWaypoints([
-  //   L.latLng(49.287414, -123.120618),
-  // ]);
-
   getRoute(map);
 
   //Find user location and display marker
@@ -43,7 +37,7 @@ $(document).ready(function() {
   function onLocationError(e) {
       alert(e.message);
   }
-  
+
   map.on('locationerror', onLocationError);
 
 });
@@ -59,28 +53,21 @@ $(document).ready(function() {
 }
 
 function addRoute(route, map) {
-
   let i;
-
   var waypointsArray = []
 
   for(i = 0; i < route.length; i++) {
-
     if(route[i] != null) {
-
       let lat, lng;
-
       lat = route[i].lat;
       lng = route[i].long;
-
       waypointsArray.push(L.latLng(lat, lng));
-
     }
   }
 
   L.Routing.control({
     waypoints: waypointsArray,
-    routeWhileDragging: true,
+    routeWhileDragging: false,
     createMarker: function() { return null; }
   }).addTo(map);
 
