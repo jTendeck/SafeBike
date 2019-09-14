@@ -33,8 +33,12 @@ $(document).ready(function() {
 
   //Find user location and display marker
   function onLocationFound(e) {
+    var radius = e.accuracy;
+  
     L.marker(e.latlng).addTo(map)
-      .bindPopUp("You are here").openPopUp();
+      .bindPopup("You are here").openPopup();
+  
+    L.circle(e.latlng, radius).addTo(map);
   }
 
   map.on('locationfound', onLocationFound);
