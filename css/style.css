@@ -4,14 +4,23 @@ body {
 #mainNav a {
   color: #051d4d; }
 
+.navbar-brand, .navbar-nav {
+  font-size: 3rem; }
+
 .navbar-toggler {
   border: none; }
+
+html {
+  font-size: 62.5%; }
 
 body {
   background-color: #a6d5ce; }
 
+.btn-primary {
+  padding: 10px; }
+
 #mapid {
-  height: 500px; }
+  height: 30rem; }
 
 .leaflet-routing-container, .leaflet-routing-error {
   width: 320px;
