@@ -1,0 +1,27 @@
+#map-container {
+  margin-top: 10rem;
+  background: white;
+  height: 70rem;
+  border-radius: 1rem;
+}
+
+#mapid {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+#btn-accept {
+  height: 5rem;
+  width: 15em;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+#req-info {
+  height: 15rem;
+  background: rgb(243, 243, 243);
+  color: grey;
+  font-size: 1.2rem;
+  padding: 4rem;
+  box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
