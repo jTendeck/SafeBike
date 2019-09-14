@@ -39,20 +39,21 @@ if (btnLogin) {
 
 function saveUserData(role, email, password) {
     console.log(role, email, password);
-    const auth = firebase.auth();
+    
         //Sign in
         const promise = auth.createUserWithEmailAndPassword(email,password);
         promise.catch(e => console.log(e.message));
-        
-        writeUserData(auth.currentUser.uid, email, role)
+        setTimeout(writeUserData(email, role), 500);
 }
 
-function writeUserData(userId, email, role) {
-    firebase.database().ref('users/' + userId).set({
-      userId,
+function writeUserData(email, role) {
+    
+    () => { firebase.database().ref('users/' + userId).set({
+      userId: auth.currentUser.uid,
       email,
       role
     });
+}
   }
 
 // Add Create Account Event
