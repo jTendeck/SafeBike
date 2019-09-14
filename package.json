@@ -4,7 +4,11 @@
   "description": "SafeBike app, assist bikers at the ride events",
   "main": "index.js",
   "dependencies": {
+<<<<<<< HEAD
     "ejs": "^2.7.1",
+=======
+    "leaflet.awesome-markers": "^2.0.5",
+>>>>>>> d269f857b9f7e020cbaa8ea04a5d58c4472d5af3
     "node-sass": "^4.12.0"
   },
   "devDependencies": {},
