@@ -16042,7 +16042,7 @@ module.exports={
 
 		_updateLines: function(routes) {
 			var addWaypoints = this.options.addWaypoints !== undefined ?
-				this.options.addWaypoints : true;
+				this.options.addWaypoints : false;
 			this._clearLines();
 
 			// add alternatives first so they lie below the main route
@@ -16953,7 +16953,7 @@ module.exports = L.Routing = {
 				{color: 'white', opacity: 0.6, weight: 4},
 				{color: 'gray', opacity: 0.8, weight: 2, dashArray: '7,12'}
 			],
-			addWaypoints: true,
+			addWaypoints: false,
 			extendToWaypoints: true,
 			missingRouteTolerance: 10
 		},
@@ -18277,7 +18277,7 @@ module.exports = L.Routing = {
 			],
 			draggableWaypoints: false,
 			routeWhileDragging: false,
-			addWaypoints: true,
+			addWaypoints: false,
 			reverseWaypoints: false,
 			addButtonClassName: '',
 			language: 'en',

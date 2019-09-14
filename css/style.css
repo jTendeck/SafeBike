@@ -8,8 +8,7 @@ body {
 
 #main-login {
   height: 400px;
-  background-color: #69a8bb;
-  margin-top: 5.5rem; }
+  margin-top: 15rem; }
 
 input {
   border: none;
@@ -24,8 +23,11 @@ input {
   .btn:hover {
     color: white; }
 
-.navbar-brand, .navbar-nav {
-  font-size: 3rem; }
+.navbar-brand {
+  font-size: 2.5rem; }
+
+.navbar-nav {
+  font-size: 1.5rem; }
 
 .navbar-toggler {
   border: none; }
