@@ -65,4 +65,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     }
 });
 
+<<<<<<< HEAD
 console.log("Firebase loaded");
+=======
+  console.log("Firebase loaded");
+>>>>>>> 23eb90acb56097262dbb15c66dc3770c37d5d47d

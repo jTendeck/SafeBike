@@ -1,8 +1,33 @@
 body {
-  background-color: #a6d5ce; }
+  background-color: #a6d5ce;
+  color: #051d4d; }
 
 #mainNav a {
-  color: #051d4d; }
+  color: #051d4d;
+  font-weight: 600; }
+
+#main-login {
+  height: 400px;
+  margin-top: 15rem; }
+
+input {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px; }
+
+.btn {
+  background: #051d4d;
+  color: lightgray; }
+  .btn:hover {
+    color: white; }
+
+.navbar-brand {
+  font-size: 2.5rem; }
+
+.navbar-nav {
+  font-size: 1.5rem; }
 
 #loginDiv {
   margin-top: 100px;
@@ -15,11 +40,17 @@ body {
 .navbar-toggler {
   border: none; }
 
+html {
+  font-size: 62.5%; }
+
 body {
   background-color: #a6d5ce; }
 
+.btn-primary {
+  padding: 10px; }
+
 #mapid {
-  height: 500px; }
+  height: 30rem; }
 
 .leaflet-routing-container, .leaflet-routing-error {
   width: 320px;

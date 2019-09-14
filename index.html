@@ -9,7 +9,6 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" type="text/css" rel="stylesheet">
-
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <!-- firebase auth -->
@@ -19,8 +18,7 @@
 </head>
 <body>
 
-  <div class="container">
-    <nav class="navbar navbar-light navbar-default navbar-expand-md fixed-top" id="mainNav">
+  <nav class="navbar navbar-light navbar-default navbar-expand-md fixed-top" id="mainNav">
       <a href="#" class="navbar-brand" id="brand">SafeBike</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle-navbar">
         <span class="navbar-toggler-icon"></span>
@@ -34,20 +32,27 @@
       </div>
     </nav>
 
-    <div id="loginDiv">
-            <input type="email" placeholder="Email" id="emailField">
-            <input type="password" placeholder="Password" id="passwordField">
-            <button type="button" id="signUpButton">Sign Up</button>
-            <button type="button" id="loginButton">Login</button>
-            <button type="button" id="logOutButton">Log Out</button>
-    </div>
-
-    <section id="login">
-      <div class="row">
-        <div class="col-sm-10" id="test"></div>
+  <div class="container">
+    <section class="login">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-6 col-md-10 text-center" id="main-login">
+            <h1 class="display-4 mt-4">Login</h1>
+            <div class="row justify-content-center">
+              <div class="col-sm-8 col-md-10">
+                  <input placeholder="Email" id="emailField">
+                  <br>
+                  <input placeholder="Password" id="passwordField">
+                  <br>
+                  <button class="btn px-4" id="loginButton">Login</button>
+                  <button class="btn px-4" id="signUpButton">Sign Up</button>
+                  <button class="btn px-4" id="logOutButton">Log Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
   </div>
 
   <!-- Firebase -->

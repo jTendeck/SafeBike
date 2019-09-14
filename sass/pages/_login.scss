@@ -1,8 +1,32 @@
 body {
   background-color: $color-primary-bg;
+  color: $color-primary-font;
 }
 
 #mainNav a {
   color: $color-primary-font;
-  
+  font-weight: 600;
 }
+
+#main-login {
+  height: 400px;
+  margin-top: 15rem;
+}
+
+input {
+  border: none;
+  border-radius: 8px; 
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+}
+
+.btn {
+  background: $color-primary-font;
+  color: rgb(211, 211, 211);
+
+    &:hover {
+      color:white;
+    }
+}
+
