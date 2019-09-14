@@ -7,20 +7,41 @@
 
   <title>Volunteer Page</title>
 
-  <!--Leaflet imports-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-  crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-  crossorigin=""></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
 
-  <!--Mapbox imports-->
-  <link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css'/>
-  <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
+    <script>
+      // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCDm-MuMfMTfLEon_tUB4Vw2Hy6unaE6-I",
+        authDomain: "safebike-15d63.firebaseapp.com",
+        databaseURL: "https://safebike-15d63.firebaseio.com",
+        projectId: "safebike-15d63",
+        storageBucket: "",
+        messagingSenderId: "832976793088",
+        appId: "1:832976793088:web:04ae41016c6474f65d32e5"
+    };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      app_firebase = firebase;
+    </script>
 
-  <!--jQuery imports-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--Leaflet imports-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+
+    <!--Mapbox imports-->
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css'/>
+    <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
+
+    <!--jQuery imports-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -56,6 +77,7 @@
   
   <!-- additional style, map imports -->
   <script src="public/js/map.js"></script>
+  <!--Leaflet routing machine import-->
   <script src="public/js/leaflet-routing-machine.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
