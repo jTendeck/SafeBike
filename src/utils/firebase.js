@@ -41,10 +41,15 @@ function saveUserData(role, email, password) {
     console.log(role, email, password);
     const auth = firebase.auth();
         //Sign in
-        const promise = auth.createUserWithEmailAndPassword(email,password);
-        promise.catch(e => console.log(e.message));
+        auth.createUserWithEmailAndPassword(email,password).then(function(firebaseUser) {
         
+
+        auth.onAuthStateChanged(function(user) {
+        console.log(user.uid);
         writeUserData(auth.currentUser.uid, email, role)
+        });
+    });
+
 }
 
 function writeUserData(userId, email, role) {
