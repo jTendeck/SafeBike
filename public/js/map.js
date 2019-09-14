@@ -43,7 +43,8 @@ $(document).ready(function() {
 });
 
   function getRoute(map) {
-  var ref = firebase.database().ref("events/vanhack2019");
+  var event = "vanhack2019"
+  var ref = firebase.database().ref("events/" + event);
 	ref.once("value", function(snap) {
     var route = snap.val().coordinates;
     console.log(route);
