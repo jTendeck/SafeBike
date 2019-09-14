@@ -20,21 +20,22 @@ $(document).ready(function() {
     enableHighAccuracy: true
   });
 
-  L.Routing.control({
-    waypoints: [
-        L.latLng(49.284708, -123.112976),
-        L.latLng(49.287414, -123.120618),
-        L.latLng(49.282511, -123.128049),
-        L.latLng(49.278638, -123.121950),
-        L.latLng(49.284708, -123.112976)
-    ],
-    createMarker: function() { return null; }
-  }).addTo(map);
+  // L.Routing.control.spliceWaypoints(1, 0, L.latLng(49.287414, -123.120618));
+
+  // L.Rrouting.control.setWaypoints([
+  //   L.latLng(49.287414, -123.120618),
+  // ]);
+
+  getRoute(map);
 
   //Find user location and display marker
   function onLocationFound(e) {
+    var radius = e.accuracy;
+  
     L.marker(e.latlng).addTo(map)
-      .bindPopUp("You are here").openPopUp();
+      .bindPopup("You are here").openPopup();
+  
+    L.circle(e.latlng, radius).addTo(map);
   }
 
   map.on('locationfound', onLocationFound);
@@ -44,6 +45,43 @@ $(document).ready(function() {
   }
   
   map.on('locationerror', onLocationError);
+
 });
 
+  function getRoute(map) {
+  var ref = firebase.database().ref("events/vanhack2019");
+	ref.once("value", function(snap) {
+    var route = snap.val().coordinates;
+    console.log(route);
+    addRoute(route, map);
+  });
 
+}
+
+function addRoute(route, map) {
+
+  let i;
+
+  var waypointsArray = []
+
+  for(i = 0; i < route.length; i++) {
+
+    if(route[i] != null) {
+
+      let lat, lng;
+
+      lat = route[i].lat;
+      lng = route[i].long;
+
+      waypointsArray.push(L.latLng(lat, lng));
+
+    }
+  }
+
+  L.Routing.control({
+    waypoints: waypointsArray,
+    routeWhileDragging: true,
+    createMarker: function() { return null; }
+  }).addTo(map);
+
+}
