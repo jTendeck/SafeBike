@@ -9,7 +9,7 @@ $(document).ready(function() {
     'https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
         tileSize: 512,
         zoomOffset: -1,
-        attribution: '© <a href="https://apps.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        attribution: '&copy; <a href="https://apps.mapbox.com/feedback/">Mapbox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
   //Set user location
@@ -34,12 +34,8 @@ $(document).ready(function() {
 
   //Find user location and display marker
   function onLocationFound(e) {
-    var radius = e.accuracy;
-
     L.marker(e.latlng).addTo(map)
       .bindPopUp("You are here").openPopUp();
-
-    L.circle(e.latlng, radius).addTo(map);
   }
 
   map.on('locationfound', onLocationFound);
