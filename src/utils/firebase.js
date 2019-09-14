@@ -13,6 +13,10 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+const database = firebase.database();
+
+const ref = database.ref("users/");
+
 const txtEmail = document.getElementById("emailField");
 const txtPassword = document.getElementById("passwordField");
 const btnLogin = document.getElementById("loginButton");
@@ -20,53 +24,65 @@ const btnSignUp = document.getElementById("signUpButton");
 const btnLogOut = document.getElementById("logOutButton");
 const btnCreateAccount = document.getElementById("createAccount");
 
-// Add Login Event
-btnLogin.addEventListener('click', e => {
-    const email = txtEmail.value;
-    const password = txtPassword.value;
-    const auth = firebase.auth();
-    //Sign in
-    const promise = auth.signInWithEmailAndPassword(email,password);
-    promise.catch(e => console.log(e.message));
-});
+// Write user data to the database
 
-// Go to sign up page
-btnSignUp.addEventListener('click', e => {
-    window.location = 'signup.html';
-});
+// function writeUserData(userId, name, email, imageUrl) {
+//     firebase.database().ref('users/' + userId).set({
+//       username: name,
+//       email: email,
+//       profile_picture : imageUrl
+//     });
+//   }
+
+// Add Login Event
+if (btnLogin) {
+    btnLogin.addEventListener('click', e => {
+        const email = txtEmail.value;
+        const password = txtPassword.value;
+        const auth = firebase.auth();
+        //Sign in
+        const promise = auth.signInWithEmailAndPassword(email,password);
+        promise.catch(e => console.log(e.message));
+    });
+}
 
 // Add Create Account Event
-btnCreateAccount.addEventListener('click', e => {
-    const email = txtEmail.value;
-    const password = txtPassword.value;
-    const auth = firebase.auth();
-    //Sign in
-    const promise = auth.createUserWithEmailAndPassword(email,password);
-    promise.catch(e => console.log(e.message));
-});
+if (btnCreateAccount) {
+    btnCreateAccount.addEventListener('click', e => {
+        var userRole;
+
+        if (document.getElementById('userType').checked) {
+            userRole = document.getElementById('userType').value;
+        }
+
+        const email = txtEmail.value;
+        const password = txtPassword.value;
+        console.log(userRole, email, password);
+
+        const auth = firebase.auth();
+        //Sign in
+        const promise = auth.createUserWithEmailAndPassword(email,password);
+        promise.catch(e => console.log(e.message));
+    });
+}
+
+// Go to sign up page
+if (btnSignUp) {
+    btnSignUp.addEventListener('click', e => {
+        window.document.location = 'signup.html';
+    });
+}
 
 // Add Logout Function
-btnLogOut.addEventListener('click', e => {
-    firebase.auth().signOut();
-});
+if (btnLogOut) {
+    btnLogOut.addEventListener('click', e => {
+        firebase.auth().signOut();
+    });
+}
+
+console.log(window.location.href);
 
 // Realtime Listener
-firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser) {
-        console.log(firebaseUser);
-        btnLogOut.style.display = "inline";
-        btnLogin.style.display = 'none';
-        btnSignUp.style.display = 'none';
-    } else {
-        btnLogOut.style.display = "none";
-        btnLogin.style.display = 'inline';
-        btnSignUp.style.display = 'inline';
-        console.log("Not logged in")
-    }
-});
 
-<<<<<<< HEAD
-console.log("Firebase loaded");
-=======
+
   console.log("Firebase loaded");
->>>>>>> 23eb90acb56097262dbb15c66dc3770c37d5d47d
