@@ -1,17 +1,34 @@
 body {
-  background-color: #a6d5ce; }
+  background-color: #a6d5ce;
+  color: #051d4d; }
 
 #mainNav a {
-  color: #051d4d; }
+  color: #051d4d;
+  font-weight: 600; }
+
+#main-login {
+  height: 400px;
+  background-color: #69a8bb;
+  margin-top: 5.5rem; }
+
+input {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px; }
+
+.btn {
+  background: #051d4d;
+  color: lightgray; }
+  .btn:hover {
+    color: white; }
 
 .navbar-toggler {
   border: none; }
 
-<<<<<<< HEAD
 body {
   background-color: #a6d5ce; }
 
-=======
->>>>>>> 7a5b2dc1e393391768c1ad94b4ec6f52bbc963c3
 #mapid {
   height: 500px; }
