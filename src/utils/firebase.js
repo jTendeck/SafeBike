@@ -30,19 +30,19 @@ btnLogin.addEventListener('click', e => {
     promise.catch(e => console.log(e.message));
 });
 
-// // Add Signup Event
-// btnSignUp.addEventListener('click', e => {
-//     const email = txtEmail.value;
-//     const password = txtPassword.value;
-//     const auth = firebase.auth();
-//     //Sign in
-//     const promise = auth.createUserWithEmailAndPassword(email,password);
-//     promise.catch(e => console.log(e.message));
-// });
-
-// Add Signup Event
+// Go to sign up page
 btnSignUp.addEventListener('click', e => {
     window.location = 'signup.html';
+});
+
+// Add Create Account Event
+btnCreateAccount.addEventListener('click', e => {
+    const email = txtEmail.value;
+    const password = txtPassword.value;
+    const auth = firebase.auth();
+    //Sign in
+    const promise = auth.createUserWithEmailAndPassword(email,password);
+    promise.catch(e => console.log(e.message));
 });
 
 // Add Logout Function
