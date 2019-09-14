@@ -14,6 +14,14 @@ body {
   border: none;
 }
 
+#loginDiv {
+  position: absolute;
+  margin-top:50px;
+}
+
+#logOutButton {
+  display: none;
+}
 #test {
   background: red;
 }
