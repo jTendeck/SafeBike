@@ -17,9 +17,10 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
 </head>
-<body>
+<body onload="firebase.auth().signOut()">
 
-  <div class="container">
+  
+  <!-- <div class="container">
     <nav class="navbar navbar-light navbar-default navbar-expand-md fixed-top" id="mainNav">
       <a href="#" class="navbar-brand" id="brand">SafeBike</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle-navbar">
@@ -33,10 +34,23 @@
         </ul>
       </div>
     </nav>
+  </div> -->
+ 
 
-
+  <div id="#signUpDiv"></div>
+  <input type="email" placeholder="Email" id="emailField">
+  <input type="password" placeholder="Password" id="passwordField">
+  <div>I am a:</div>
+  <button type="button" id="createVolunteer" value="volunteer">Volunteer</button>
+  <button type="button" id="createParticipant" value="participant">Participant</button>
   </div>
-  
+
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+<script src="src/utils/firebase.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

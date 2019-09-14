@@ -53,6 +53,14 @@ input {
 .navbar-nav {
   font-size: 1.5rem; }
 
+#loginDiv {
+  margin-top: 100px;
+}
+
+#signUpDiv {
+  margin-top: 100px;
+}
+
 .navbar-toggler {
   border: none; }
 
