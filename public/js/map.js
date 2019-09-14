@@ -28,7 +28,6 @@ $(document).ready(function() {
         L.latLng(49.278638, -123.121950),
         L.latLng(49.284708, -123.112976)
     ],
-    routeWhileDragging: true,
     createMarker: function() { return null; }
   }).addTo(map);
 
