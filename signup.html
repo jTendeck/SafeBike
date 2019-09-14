@@ -17,7 +17,7 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
 </head>
-<body>
+<body onload="firebase.auth().signOut()">
 
   
   <!-- <div class="container">
@@ -39,18 +39,10 @@
 
   <div id="#signUpDiv"></div>
   <input type="email" placeholder="Email" id="emailField">
-        <input type="password" placeholder="Password" id="passwordField">
-        <div>
-            <div>I am a:</div>
-            <input type="radio" id="participant" name="userType" value="participant"
-                        checked>
-            <label for="huey">Participant</label>
-        
-        <div>
-            <input type="radio" id="volunteer" name="userType" value="volunteer">
-            <label for="dewey">Volunteer</label>
-        </div>
-  <button type="button" id="createAccount">Create Account</button>
+  <input type="password" placeholder="Password" id="passwordField">
+  <div>I am a:</div>
+  <button type="button" id="createVolunteer" value="volunteer">Volunteer</button>
+  <button type="button" id="createParticipant" value="participant">Participant</button>
   </div>
 
 

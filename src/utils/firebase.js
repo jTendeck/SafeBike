@@ -22,17 +22,8 @@ const txtPassword = document.getElementById("passwordField");
 const btnLogin = document.getElementById("loginButton");
 const btnSignUp = document.getElementById("signUpButton");
 const btnLogOut = document.getElementById("logOutButton");
-const btnCreateAccount = document.getElementById("createAccount");
-
-// Write user data to the database
-
-// function writeUserData(userId, name, email, imageUrl) {
-//     firebase.database().ref('users/' + userId).set({
-//       username: name,
-//       email: email,
-//       profile_picture : imageUrl
-//     });
-//   }
+const btnCreateParticipant = document.getElementById("createParticipant");
+const btnCreateVolunteer = document.getElementById("createVolunteer");
 
 // Add Login Event
 if (btnLogin) {
@@ -46,23 +37,32 @@ if (btnLogin) {
     });
 }
 
-// Add Create Account Event
-if (btnCreateAccount) {
-    btnCreateAccount.addEventListener('click', e => {
-        var userRole;
-
-        if (document.getElementById('userType').checked) {
-            userRole = document.getElementById('userType').value;
-        }
-
-        const email = txtEmail.value;
-        const password = txtPassword.value;
-        console.log(userRole, email, password);
-
-        const auth = firebase.auth();
+function saveUserData(role, email, password) {
+    console.log(role, email, password);
+    const auth = firebase.auth();
         //Sign in
         const promise = auth.createUserWithEmailAndPassword(email,password);
         promise.catch(e => console.log(e.message));
+        
+        writeUserData(auth.currentUser.uid, email, role)
+}
+
+function writeUserData(userId, email, role) {
+    firebase.database().ref('users/' + userId).set({
+      userId,
+      email,
+      role
+    });
+  }
+
+// Add Create Account Event
+if (btnCreateParticipant) {
+    btnCreateParticipant.addEventListener('click', e => {
+        saveUserData(btnCreateParticipant.value, txtEmail.value, txtPassword.value);
+    });
+
+    btnCreateVolunteer.addEventListener('click', e => {
+        saveUserData(btnCreateVolunteer.value, txtEmail.value, txtPassword.value);
     });
 }
 
@@ -83,6 +83,4 @@ if (btnLogOut) {
 console.log(window.location.href);
 
 // Realtime Listener
-
-
-  console.log("Firebase loaded");
+console.log("Firebase loaded");
