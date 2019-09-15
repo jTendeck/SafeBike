@@ -1,6 +1,13 @@
 var currentUser;
 
 
+
+
+
+
+
+
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         const userAlertRef = firebase.database().ref("users/" + user.uid);
@@ -10,6 +17,11 @@ firebase.auth().onAuthStateChanged(function(user) {
                 console.log("null snap");
             } else {
                 currentUser = snap.val();
+
+                    if(currentUser.role == "volunteer") {
+                        console.log("currentUser: " + currentUser.role);
+                        showAlerts();
+                    }
                 dbLoaded();
             }
       });
@@ -60,3 +72,60 @@ function dbLoaded() {
         });
     }
 };
+
+
+function showAlerts() {
+    const alertPanel = document.getElementById("req-info");
+
+    if(alertPanel) {
+        alertPanel.innerHTML = "volunteer account is detected";
+    }
+    getAlerts();
+}
+
+// $(document).ready(function() {
+
+//     const alertPanel = document.getElementById("req-info");
+
+//     if(alertPanel) {
+
+//     }
+
+
+function getAlerts() {
+    var ref = firebase.database().ref("alerts");
+
+      ref.on("value", function(snap) {
+      var route = snap.val();
+      showAlertList(route);
+});
+}
+
+
+function showAlertList(alerts) {
+    const alertPanel = document.getElementById("req-info");
+    console.log(JSON.stringify("string:" + alerts));
+    if(alertPanel) {
+
+
+        for (var prop in alerts) {
+            displayAlertType(prop);
+   
+        }
+    }
+}
+
+
+function displayAlertType(alertID) {
+    const alertPanel = document.getElementById("req-info");
+    var ref = firebase.database().ref("alerts/" + alertID);
+    ref.on("value", function(snap) {
+        console.log("alert list" + snap.val().type);
+        alertPanel.innerHTML = snap.val().type;
+    });
+    
+}
+
+
+
+
