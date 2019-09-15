@@ -21,11 +21,15 @@ function errData(err) {
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         console.log("USER:" + user.uid);
-        const alertRef = firebase.database().ref("user/" + user.uid);
+        const alertRef = firebase.database().ref("users/" + user.uid);
 
         alertRef.once("value", function(snap) {
-        var email = snap.email;
-        console.log(user.uid);
+            if(snap == null) {
+                console.log("null snap");
+            } else {
+                console.log("not null snap");
+                console.log(snap.val());
+            }
       });
     } else {
         console.log("No user")
