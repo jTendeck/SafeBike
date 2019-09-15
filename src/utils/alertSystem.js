@@ -66,7 +66,7 @@ function dbLoaded() {
                 userAlertRef.on("value", function(snap) {
                     
                     let alert = JSON.stringify(snap.val().type);
-                    alertPanel.innerHTML = alert;
+                    // alertPanel.innerHTML = alert;
                 })
             }
         });
@@ -78,9 +78,9 @@ function showAlerts() {
     const alertPanel = document.getElementById("req-info");
 
     if(alertPanel) {
-        alertPanel.innerHTML = "volunteer account is detected";
+        getAlerts();
     }
-    getAlerts();
+
 }
 
 // $(document).ready(function() {
@@ -96,31 +96,28 @@ function getAlerts() {
     var ref = firebase.database().ref("alerts");
 
       ref.on("value", function(snap) {
-      var route = snap.val();
-      showAlertList(route);
+      var alerts = snap.val();
+      showAlertList(alerts);
 });
 }
 
 
 function showAlertList(alerts) {
     const alertPanel = document.getElementById("req-info");
-    console.log(JSON.stringify("string:" + alerts));
     if(alertPanel) {
 
 
         for (var prop in alerts) {
-            displayAlertType(prop);
-   
+            displayAlertType(prop, alertPanel);
         }
     }
 }
 
 
-function displayAlertType(alertID) {
-    const alertPanel = document.getElementById("req-info");
+function displayAlertType(alertID, alertPanel) {
     var ref = firebase.database().ref("alerts/" + alertID);
     ref.on("value", function(snap) {
-        console.log("alert list" + snap.val().type);
+        console.log("alert list" + snap.val());
         alertPanel.innerHTML = snap.val().type;
     });
     
