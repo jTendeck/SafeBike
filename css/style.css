@@ -81,8 +81,9 @@
 
 #map-container {
   margin-top: 5rem;
+  margin-bottom: 5rem;
   background: white;
-  height: 70rem;
+  height: auto;
   border-radius: 1rem;
   overflow: hidden; }
 

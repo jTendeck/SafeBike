@@ -51,8 +51,15 @@ function saveUserData(role, email, password) {
         const auth = firebase.auth();
         //Sign in
         auth.createUserWithEmailAndPassword(email,password).then(function(firebaseUser) {
+
             auth.onAuthStateChanged(function(user) {
-                writeUserData(user.uid, email, role)
+
+                if (user) {
+                    writeUserData(user.uid, email, role)
+                }
+                    else
+                        window.alert("This email is already in use.");
+                
             });
         });
 }
