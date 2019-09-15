@@ -1,14 +1,11 @@
 #biker_help_btn {
-  margin-right: 4rem;
-  margin-left: 4rem;
-  margin-top: 5rem;
-  margin-bottom: 4rem; }
+  margin: 2rem; }
 
 .biker-buttons {
   display: inline-block;
   margin-right: 2rem;
   margin-left: 2rem;
-  width: 15rem; }
+  width: 20rem; }
 
 .btn-primary {
   background-color: #051d4d;
@@ -21,7 +18,7 @@
   font-size: 2rem; }
 
 .white-container {
-  background-color: white;
+  background-color: whitesmoke;
   margin-top: 2.5rem;
   border-radius: 1rem;
   overflow: hidden;
