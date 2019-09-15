@@ -26,22 +26,23 @@ function dbLoaded() {
     const waterButton = document.getElementById("water-btn");
     const alertPanel = document.getElementById("req-info");
     var confirmButton = document.getElementById("confirm-btn");
+    var emergencyType;
 
     if (medButton && repairButton && waterButton && confirmButton) {
         medButton.addEventListener('click', e => {
-            confirmButton.value = medButton.value;
+            emergencyType = medButton.value;
         });
 
         repairButton.addEventListener('click', e => {
-            confirmButton.value = repairButton.value;
+            emergencyType = repairButton.value;
         });
 
         waterButton.addEventListener('click', e => {
-            confirmButton.value = waterButton.value;
+            emergencyType = waterButton.value;
         });
 
         confirmButton.addEventListener('click', e => {
-            sendAlert(confirmButton.value);
+            sendAlert(emergencyType);
         });
     }
 

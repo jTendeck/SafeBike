@@ -7,6 +7,9 @@
 }
 .biker-buttons {
     display: inline-block;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    width: 15rem;
 }
 
 .btn-primary {
@@ -22,7 +25,7 @@
 
 .btn {
     font-size: $font-size-mobile-btn;
-    text-transform: uppercase;
+
 }
 
 .white-container{
@@ -30,6 +33,7 @@
     margin-top: 7rem;
     border-radius: 1rem;
     overflow: hidden;
+    margin-bottom: 2rem;
 }
 
 
@@ -49,4 +53,6 @@
     display: none;
     height: 10vh;
 }
-
+#confirm-mdg{
+    display: none;
+}
