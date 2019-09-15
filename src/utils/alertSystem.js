@@ -70,11 +70,9 @@ function showAlerts() {
 
 // $(document).ready(function() {
 
-//     const alertPanel = document.getElementById("req-info");
+//     const alertPanel = document.getElementById("acp");
 
-//     if(alertPanel) {
-
-//     }
+// });
 
 
 function getAlerts() {
@@ -104,7 +102,8 @@ function displayAlertType(alertID, alertPanel) {
     var ref = firebase.database().ref("alerts/" + alertID);
     ref.on("value", function(snap) {
         console.log("alert list" + snap.val());
-        alertPanel.innerHTML = snap.val().type;
+        alertPanel.innerHTML =  '<div class="alert alert-danger" role="alert"  style="font-size:20pt">Emergency Received! Type: ' +
+  snap.val().type + '</div>';
     });
     
 }
