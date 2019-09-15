@@ -33,7 +33,8 @@ function dbLoaded() {
     const alertPanel = document.getElementById("req-info");
     var confirmButton = document.getElementById("confirm-btn");
     var emergencyType;
-
+    
+    userAlertRef.remove();
     if (medButton && repairButton && waterButton && confirmButton) {
         medButton.addEventListener('click', e => {
             emergencyType = medButton.value;
@@ -53,17 +54,7 @@ function dbLoaded() {
     }
 
     function sendAlert(alertType) {
-        userAlertRef.push({type: alertType}).then(function() {
-            console.log(alertType);
-            if(alertPanel) {
-                
-                userAlertRef.on("value", function(snap) {
-                    
-                    let alert = JSON.stringify(snap.val().type);
-                    // alertPanel.innerHTML = alert;
-                })
-            }
-        });
+        userAlertRef.push({type: alertType});
     }
 };
 
@@ -88,6 +79,7 @@ function showAlerts() {
 
 function getAlerts() {
     var ref = firebase.database().ref("alerts");
+
 
       ref.on("value", function(snap) {
       var alerts = snap.val();
