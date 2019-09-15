@@ -55,7 +55,11 @@ function writeUserData(userId, email, role) {
       role
     });
 
-    window.document.location = 'biker.html';
+    if(role == "volunteer") {
+        window.document.location = 'volunteer.html';
+    } else {
+        window.document.location = 'biker.html';
+    }
 }
 
 // Add Create Account Event
