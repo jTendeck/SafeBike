@@ -1,4 +1,31 @@
+var routingControl;
+var currentUser;
+
+
+
 $(document).ready(function() {
+
+
+  firebase.auth().onAuthStateChanged(function(user){
+    currentUser = user;
+    console.log(currentUser);
+  });
+
+  // const btnVanhacks = document.getElementById("vanhacks2019");
+  // const btnBCITBurnaby = document.getElementById("bcitBurnaby");
+
+  var event = "vanhack2019";
+
+  // btnVanhacks.addEventListener('click', e => {
+  //   event = "vanhack2019";
+  //   getRoute(map, event);  
+  // });
+
+  // btnBCITBurnaby.addEventListener('click', e => {
+  //   event = "bcitBurnaby";
+  //   getRoute(map, event);  
+  // });
+
   //Create map variable
   var map = L.map('mapid');
 
@@ -20,7 +47,13 @@ $(document).ready(function() {
     enableHighAccuracy: true
   });
 
-  getRoute(map);
+  routingControl = L.Routing.control({
+    waypoints: [null],
+    routeWhileDragging: false,
+    createMarker: function() { return null; }
+  }).addTo(map);
+
+  getRoute(map, event);
 
   //Find user location and display marker
   function onLocationFound(e) {
@@ -42,8 +75,7 @@ $(document).ready(function() {
 
 });
 
-  function getRoute(map) {
-  var event = "vanhack2019"
+  function getRoute(map, event) {
   var ref = firebase.database().ref("events/" + event);
 	ref.once("value", function(snap) {
     var route = snap.val().coordinates;
@@ -57,6 +89,8 @@ function addRoute(route, map) {
   let i;
   var waypointsArray = []
 
+  routingControl.spliceWaypoints(0, 999);
+
   for(i = 0; i < route.length; i++) {
     if(route[i] != null) {
       let lat, lng;
@@ -66,10 +100,12 @@ function addRoute(route, map) {
     }
   }
 
-  L.Routing.control({
+  routingControl = L.Routing.control({
     waypoints: waypointsArray,
     routeWhileDragging: false,
     createMarker: function() { return null; }
   }).addTo(map);
+
+  console.log(routingControl);
 
 }

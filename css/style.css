@@ -90,7 +90,21 @@ input {
   width: 300px; }
 
 #signUpDiv {
+<<<<<<< HEAD
   background-color: red; }
+=======
+  display: flex;
+  align-items: center; }
+
+.signup-inputs {
+  margin: 20rem 20rem 0rem 20rem; }
+
+.signup-buttons {
+  margin: 5rem; }
+
+.signup-buttons button {
+  margin: 1rem; }
+>>>>>>> 21fb11775b208a3194c50625a7281ff37989870d
 
 .navbar-brand {
   font-size: 2rem; }
