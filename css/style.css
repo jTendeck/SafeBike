@@ -8,7 +8,7 @@
   border-radius: 1rem;
   width: 100%; }
 
-#btn-accept {
+#btn-accept, #btn-complete {
   height: 5rem;
   width: 15em;
   font-size: 2rem;
@@ -41,25 +41,11 @@ input {
   margin: 10px;
   width: 300px; }
 
-.btn {
-  background: #051d4d;
-  color: lightgray; }
-  .btn:hover {
-    color: white; }
-
 .navbar-brand {
   font-size: 2.5rem; }
 
 .navbar-nav {
   font-size: 1.5rem; }
-
-#loginDiv {
-  margin-top: 100px;
-}
-
-#signUpDiv {
-  margin-top: 100px;
-}
 
 .navbar-toggler {
   border: none; }
@@ -70,8 +56,12 @@ html {
 body {
   background-color: #a6d5ce; }
 
-.btn-primary {
-  padding: 10px; }
+.btn {
+  background: #051d4d;
+  color: white; }
+  .btn:hover {
+    background: #072a70;
+    color: white; }
 
 #mapid {
   height: 30rem; }
