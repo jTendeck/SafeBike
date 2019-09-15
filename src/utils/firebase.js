@@ -71,7 +71,6 @@ function writeUserData(userId, email, role) {
       role
     });
 
-    window.document.location = 'dashboard.html';
 }
 
 // Add Create Account Event

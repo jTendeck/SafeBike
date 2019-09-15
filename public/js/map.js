@@ -2,7 +2,6 @@ var routingControl;
 var currentUser;
 
 
-
 $(document).ready(function() {
 
 
@@ -28,6 +27,7 @@ $(document).ready(function() {
 
   //Create map variable
   var map = L.map('mapid');
+  var map2 = L.map('mapid2');
 
   L.mapbox.accessToken = 'pk.eyJ1IjoiZXNpbmFydGEiLCJhIjoiY2swanRkdGdqMGVneDNjb2N6MGJtc2loNCJ9.J6DmYxFleE5Secq-aRveRg';
 
@@ -39,6 +39,13 @@ $(document).ready(function() {
         attribution: '&copy; <a href="https://apps.mapbox.com/feedback/">Mapbox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
+    L.tileLayer(
+      'https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
+          tileSize: 512,
+          zoomOffset: -1,
+          attribution: '&copy; <a href="https://apps.mapbox.com/feedback/">Mapbox</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map2);
+      
   //Set user location
   map.locate({
     setView: true,
@@ -47,6 +54,14 @@ $(document).ready(function() {
     enableHighAccuracy: true
   });
 
+  map2.locate({
+    setView: true,
+    maxZoom: 16,
+    timeout: 1000000000,
+    enableHighAccuracy: true
+  });
+
+  //Routing
   routingControl = L.Routing.control({
     waypoints: [null],
     routeWhileDragging: false,
@@ -54,6 +69,14 @@ $(document).ready(function() {
   }).addTo(map);
 
   getRoute(map, event);
+
+  routingControl = L.Routing.control({
+    waypoints: [null],
+    routeWhileDragging: false,
+    createMarker: function() { return null; }
+  }).addTo(map2);
+
+  getRoute(map2, event);
 
   //Find user location and display marker
   function onLocationFound(e) {
@@ -63,6 +86,11 @@ $(document).ready(function() {
       .bindPopup("You are here").openPopup();
   
     L.circle(e.latlng, radius).addTo(map);
+
+    L.marker(e.latlng).addTo(map2)
+    .bindPopup("You are here").openPopup();
+
+    L.circle(e.latlng, radius).addTo(map2);
   }
 
   map.on('locationfound', onLocationFound);
@@ -72,6 +100,14 @@ $(document).ready(function() {
   }
 
   map.on('locationerror', onLocationError);
+
+  map2.on('locationfound', onLocationFound);
+
+  function onLocationError(e) {
+      alert(e.message);
+  }
+
+  map2.on('locationerror', onLocationError);
 
 });
 
