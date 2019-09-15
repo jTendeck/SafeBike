@@ -43,6 +43,9 @@
   font-size: 2rem;
   font-weight: 300; }
 
+#btn-complete {
+  display: none; }
+
 #req-info {
   height: 15rem;
   background: #f3f3f3;
