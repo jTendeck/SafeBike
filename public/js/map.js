@@ -75,7 +75,7 @@ $(document).ready(function() {
 
 });
 
-  function getRoute(map, event) {
+function getRoute(map, event) {
   var ref = firebase.database().ref("events/" + event);
 	ref.once("value", function(snap) {
     var route = snap.val().coordinates;
