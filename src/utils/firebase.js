@@ -59,7 +59,7 @@ function writeUserData(userId, email, role) {
       role
     });
 }
-  }
+  
 
 // Add Create Account Event
 if (btnCreateParticipant) {
