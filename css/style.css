@@ -22,7 +22,7 @@
 
 .white-container {
   background-color: white;
-  margin-top: 7rem;
+  margin-top: 2.5rem;
   border-radius: 1rem;
   overflow: hidden;
   margin-bottom: 2rem; }
@@ -112,7 +112,8 @@ input {
   border: none; }
 
 .navbar {
-  background-color: #a6d5ce; }
+  background-color: #a6d5ce;
+  font-family: Nunito; }
 
 html {
   font-size: 62.5%; }
