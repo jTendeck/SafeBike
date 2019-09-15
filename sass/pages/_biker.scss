@@ -1,12 +1,11 @@
 #biker_help_btn {
-//   width: 90%;
-  margin-right: 4rem;
-  margin-left: 4rem;
-  margin-top: 5rem;
- align-items: center;
+
+  margin:2rem;
 }
 .biker-buttons {
-    display: block;
+    display: inline-block;
+    margin-right: 2rem;
+    margin-left: 2rem;
     width: 20rem;
 }
 
@@ -23,17 +22,31 @@
 
 .btn {
     font-size: $font-size-mobile-btn;
-    // text-transform: uppercase;
 }
 
 .white-container{
-    background-color: white;
-    margin-top: 7rem;
+    background-color: rgb(245, 245, 245);
+    margin-top: 2.5rem;
     border-radius: 1rem;
     overflow: hidden;
-    
+    margin-bottom: 2rem;
 }
 
 #confirm-btn, #cancel-btn, #ok-btn{
+    display: none;
+}
+
+#confirm-btn {
+    background-color: green;
+}
+#cancel-btn {
+    background-color: red;
+}
+
+#help-is-coming {
+    display: none;
+    height: 10vh;
+}
+#confirm-mdg{
     display: none;
 }

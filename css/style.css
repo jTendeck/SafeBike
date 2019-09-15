@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 #biker_help_btn {
-  margin-right: 4rem;
-  margin-left: 4rem;
-  margin-top: 5rem;
-  align-items: center; }
+  margin: 2rem; }
 
 .biker-buttons {
-  display: block;
+  display: inline-block;
+  margin-right: 2rem;
+  margin-left: 2rem;
   width: 20rem; }
 
 .btn-primary {
@@ -20,12 +19,26 @@
   font-size: 2rem; }
 
 .white-container {
-  background-color: white;
-  margin-top: 7rem;
+  background-color: whitesmoke;
+  margin-top: 2.5rem;
   border-radius: 1rem;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 2rem; }
 
 #confirm-btn, #cancel-btn, #ok-btn {
+  display: none; }
+
+#confirm-btn {
+  background-color: green; }
+
+#cancel-btn {
+  background-color: red; }
+
+#help-is-coming {
+  display: none;
+  height: 10vh; }
+
+#confirm-mdg {
   display: none; }
 
 #map-container {
@@ -85,6 +98,19 @@ hr {
   font-weight: 200;
   border-radius: 8px; }
 
+#signUpDiv {
+  display: flex;
+  align-items: center; }
+
+.signup-inputs {
+  margin: 20rem 20rem 0rem 20rem; }
+
+.signup-buttons {
+  margin: 5rem; }
+
+.signup-buttons button {
+  margin: 1rem; }
+
 .navbar-brand {
   font-size: 2rem; }
 
@@ -95,7 +121,12 @@ hr {
   border: none; }
 
 .navbar {
+<<<<<<< HEAD
   background-color: #a6d5ce; }
+=======
+  background-color: #a6d5ce;
+  font-family: Nunito; }
+>>>>>>> dcf138e95e48f600f8d3f54d9dd10b4bb42db682
 
 html {
   font-size: 62.5%;

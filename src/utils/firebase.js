@@ -15,8 +15,6 @@ var firebaseConfig = {
 
 const database = firebase.database();
 
-const ref = database.ref("users/");
-
 const txtEmail = document.getElementById("emailField");
 const txtPassword = document.getElementById("passwordField");
 const btnLogin = document.getElementById("loginButton");
@@ -39,38 +37,39 @@ if (btnLogin) {
 
 function saveUserData(role, email, password) {
     console.log(role, email, password);
-    
+        const auth = firebase.auth();
         //Sign in
         auth.createUserWithEmailAndPassword(email,password).then(function(firebaseUser) {
-        
-
-        auth.onAuthStateChanged(function(user) {
-        console.log(user.uid);
-        writeUserData(user.uid, email, role)
+            auth.onAuthStateChanged(function(user) {
+                writeUserData(user.uid, email, role)
+            });
         });
-    });
-
 }
 
 function writeUserData(userId, email, role) {
-    console.log("user" + userId)
     firebase.database().ref('users/' + userId).set({
       userId,
       email,
       role
     });
+
+    if(role == "volunteer") {
+        window.document.location = 'volunteer.html';
+    } else {
+        window.document.location = 'biker.html';
+    }
 }
-  }
 
 // Add Create Account Event
-if (btnCreateParticipant) {
-    btnCreateParticipant.addEventListener('click', e => {
-        saveUserData(btnCreateParticipant.value, txtEmail.value, txtPassword.value);
-    });
 
-    btnCreateVolunteer.addEventListener('click', e => {
-        saveUserData(btnCreateVolunteer.value, txtEmail.value, txtPassword.value);
-    });
+if (btnCreateParticipant) {
+  btnCreateParticipant.addEventListener('click', e => {
+    saveUserData(btnCreateParticipant.value, txtEmail.value, txtPassword.value);
+  });
+
+  btnCreateVolunteer.addEventListener('click', e => {
+      saveUserData(btnCreateVolunteer.value, txtEmail.value, txtPassword.value);
+  });
 }
 
 // Go to sign up page
@@ -86,8 +85,3 @@ if (btnLogOut) {
         firebase.auth().signOut();
     });
 }
-
-console.log(window.location.href);
-
-// Realtime Listener
-console.log("Firebase loaded");

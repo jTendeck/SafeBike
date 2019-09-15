@@ -6,12 +6,42 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       
-      <!-- Map stylesheet -->
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-     crossorigin=""/>
-     <link rel="stylesheet" href="/public/js/leaflet-routing-machine.js"/>
-     <link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css'/>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCDm-MuMfMTfLEon_tUB4Vw2Hy6unaE6-I",
+        authDomain: "safebike-15d63.firebaseapp.com",
+        databaseURL: "https://safebike-15d63.firebaseio.com",
+        projectId: "safebike-15d63",
+        storageBucket: "",
+        messagingSenderId: "832976793088",
+        appId: "1:832976793088:web:04ae41016c6474f65d32e5"
+    };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      app_firebase = firebase;
+    </script>
+
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--Leaflet imports-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+
+    <!--Mapbox imports-->
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css'/>
+    <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
+
+    <!--jQuery imports-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>>
      <!-- Bootstrap and font awesome -->
      
      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" type="text/css" rel="stylesheet">
@@ -29,6 +59,13 @@
      
      <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+     <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+  <script src="src/utils/firebase.js"></script>
+  <script src="src/utils/alertSystem.js"></script>
    </head>
    <body>
       <nav class="navbar navbar-light navbar-default navbar-expand-md fixed-top" id="mainNav">
@@ -38,42 +75,45 @@
           </button>
           <div class="collapse navbar-collapse" id="navLinks">
             <ul class="navbar-nav">
-              <li class="nav-item"><a href="#" class="nav-link">DASHBOARD</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">ABOUT</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">HELP</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Help</a></li>
             </ul>
           </div>
         </nav>
 
       <div class="container">
         
-          <div class="justify-content-md-center white-container">
+          <div class="justify-content-md-center white-container shadow">
  
                 <div id="mapid"></div>
-                <div id="biker_help_btn" class="col text-center"> 
-
-                    <button id="med-btn" type="button" class="btn btn-primary biker-buttons my-4">Medical</button>
-                    <button id="water-btn" type="button" class="btn btn-primary biker-buttons my-4">Water</button>
-                    <button id="repair-btn" type="button" class="btn btn-primary biker-buttons my-4">Repair</button>
-                    <button type="button" class="btn btn-secondary biker-buttons my-4s">My help requests</button>
-
+                <div id="biker_help_btn"> 
+                  <div class="col-md text-center">
+                    <div>To request help press on one of the buttons.</div>
+                      <div id="confirm-msg"></div>
+                      <div id="help-is-coming"></div>
                     
-                    <div id="confirm-msg"></div>
-                    <div id="help-is-coming"></div>
+                    <button id="med-btn" type="button" class="btn btn-primary biker-buttons my-4">
+                        <i class="fas fa-briefcase-medical"></i>&nbsp; Medical</button> 
+                    <button id="water-btn" type="button" class="btn btn-primary biker-buttons my-4">
+                        <i class="fas fa-tint"></i> &nbsp;
+                      Water
+                    </button> 
 
-                    <button id="confirm-btn" type="button" class="btn btn-success biker-buttons my-4">Confirm</button>
-                    <button id="cancel-btn" type="button" class="btn btn-danger biker-buttons my-4">Cancel</button>
-                    <button id="ok-btn" type="button" class="btn btn-success biker-buttons my-4">Success</button>
+                    <button id="repair-btn" type="button" class="btn btn-primary biker-buttons my-4">
+                        <i class="fas fa-tools"></i> &nbsp;
+                      Repair</button> 
+
+
+
+                    <!-- <button id="request-btn" type="button" class="btn btn-secondary biker-buttons my-4s">My requests</button> -->
+                    <button id="confirm-btn" type="button" class="btn btn-success biker-buttons m-4">Confirm</button> 
+                    <button id="cancel-btn" type="button" class="btn btn-danger biker-buttons m-4">Cancel</button>
+                    <button id="ok-btn" type="button" class="btn btn-success biker-buttons m-4">Ok</button>
+                  </div>
                 </div>
             </div>
           </div>
-          
-
-          
-
-        
-      
-
 
         
       <script>
@@ -81,36 +121,46 @@
         $('#med-btn').on('click', addMsgMed);
           function addMsgMed(){
             $('#confirm-msg').text("Please confirm your request for medical help.");
-            $('#water-btn').hide();
-            $('#repair-btn').hide();
-            $('#med-btn').hide();
+            $('#water-btn').toggle();
+            $('#repair-btn').toggle();
+            $('#med-btn').toggle();
+            $('#request-btn').toggle();
             $('#confirm-btn').show();
             $('#cancel-btn').show();
-          
+            $('#confirm-msg').show();
+           
           }
+
+
+
 // Water button was clicked
           $('#water-btn').on('click', addMsgWater);
           function addMsgWater(){
             $('#confirm-msg').text("Please confirm your request for water.");
-            $('#water-btn').hide();
-            $('#repair-btn').hide();
-            $('#med-btn').hide();
-            $('#confirm-btn').show();
-            $('#cancel-btn').show();
-          
+            $('#water-btn').toggle();
+            $('#repair-btn').toggle();
+            $('#request-btn').toggle();
+            $('#med-btn').toggle();
+            $('#confirm-btn').toggle();
+            $('#cancel-btn').toggle();
+            $('ok-btn').toggle();
+            $('#confirm-msg').toggle();
           }
-//Repare button was clicked
+
+//Repair button was clicked
           $('#repair-btn').on('click', addMsgRepair);
           function addMsgRepair(){
             $('#confirm-msg').text("Please confirm your request for repair.");
-            $('#water-btn').hide();
-            $('#repair-btn').hide();
-            $('#med-btn').hide();
-            $('#confirm-btn').show();
-            $('#cancel-btn').show();
-          
-          }
+            $('#confirm-msg').show();
+            $('#water-btn').toggle();
+            $('#repair-btn').toggle();
+            $('#med-btn').toggle();
+            $('#request-btn').toggle();
+            $('#confirm-btn').toggle();
+            $('#cancel-btn').toggle();
 
+          }
+// Cancel request button
         $('#cancel-btn').on('click', returnFuncCancel);
           function returnFuncCancel(){
             $('#confirm-msg').hide();
@@ -119,18 +169,32 @@
             $('#med-btn').show();
             $('#confirm-btn').hide();
             $('#cancel-btn').hide();
+            $('#request-btn').show();
 
           }
-          
-          $('#confirm-btn').on('click', returnFunc);
+// Confirm button clicked
+          $('#confirm-btn').on('click', returnFuncConfirm);
           function returnFuncConfirm(){
-            $('#help-is-coming').text("Help is on the way! Please sit tight a voluneer is going to be with you shortly");
+            $('#help-is-coming').toggle();
+            $('#help-is-coming').text("Help is on the way! Please wait, a voluneer is going to be with you shortly");
             $('#confirm-msg').hide();
+            $('#confirm-btn').hide();
+            $('#cancel-btn').hide();
+            $('#request-btn').show();
+            $('#ok-btn').show();
+          }
+
+// Ok button
+          $('#ok-btn').on('click', okFunc);
+          function okFunc(){
+            $('#help-is-coming').hide();
             $('#water-btn').show();
             $('#repair-btn').show();
             $('#med-btn').show();
             $('#confirm-btn').hide();
             $('#cancel-btn').hide();
+            $('#ok-btn').toggle();
+            $('#request-btn').toggle();
             
           }
           
