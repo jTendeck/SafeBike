@@ -45,16 +45,16 @@ function saveUserData(role, email, password) {
         
         auth.onAuthStateChanged(function(user) {
         console.log(user.uid);
-        writeUserData(auth.currentUser.uid, email, role)
+        writeUserData(user.uid, email, role)
         });
     });
 
 }
 
-function writeUserData(email, role) {
-    
-    () => { firebase.database().ref('users/' + userId).set({
-      userId: auth.currentUser.uid,
+function writeUserData(userId, email, role) {
+    console.log("user" + userId)
+    firebase.database().ref('users/' + userId).set({
+      userId,
       email,
       role
     });
