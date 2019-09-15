@@ -11,20 +11,20 @@ $(document).ready(function() {
     console.log(currentUser);
   });
 
-  const btnVanhacks = document.getElementById("vanhacks2019");
-  const btnBCITBurnaby = document.getElementById("bcitBurnaby");
+  // const btnVanhacks = document.getElementById("vanhacks2019");
+  // const btnBCITBurnaby = document.getElementById("bcitBurnaby");
 
   var event = "vanhack2019";
 
-  btnVanhacks.addEventListener('click', e => {
-    event = "vanhack2019";
-    getRoute(map, event);  
-  });
+  // btnVanhacks.addEventListener('click', e => {
+  //   event = "vanhack2019";
+  //   getRoute(map, event);  
+  // });
 
-  btnBCITBurnaby.addEventListener('click', e => {
-    event = "bcitBurnaby";
-    getRoute(map, event);  
-  });
+  // btnBCITBurnaby.addEventListener('click', e => {
+  //   event = "bcitBurnaby";
+  //   getRoute(map, event);  
+  // });
 
   //Create map variable
   var map = L.map('mapid');

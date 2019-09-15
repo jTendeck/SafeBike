@@ -54,19 +54,23 @@ function writeUserData(userId, email, role) {
       email,
       role
     });
-
-    window.document.location = 'biker.html';
 }
 
 // Add Create Account Event
 if (btnCreateParticipant) {
     btnCreateParticipant.addEventListener('click', e => {
-        saveUserData(btnCreateParticipant.value, txtEmail.value, txtPassword.value);
+        saveUserData(btnCreateParticipant.value, txtEmail.value, txtPassword.value).then(function (response) {
+          window.location = "biker.html";
+        });
     });
+} 
 
-    btnCreateVolunteer.addEventListener('click', e => {
-        saveUserData(btnCreateVolunteer.value, txtEmail.value, txtPassword.value);
-    });
+if (btnCreateVolunteer) {
+  btnCreateVolunteer.addEventListener('click', e => {
+      saveUserData(btnCreateVolunteer.value, txtEmail.value, txtPassword.value).then(function (response) {
+        window.location = "volunteer.html";
+      });
+  });
 }
 
 // Go to sign up page
