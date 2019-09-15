@@ -27,11 +27,54 @@
 #confirm-btn, #cancel-btn, #ok-btn {
   display: none; }
 
+#map-container {
+  margin-top: 10rem;
+  background: white;
+  height: 70rem;
+  border-radius: 1rem; }
+
+#mapid {
+  border-radius: 1rem;
+  width: 100%; }
+
+#btn-accept {
+  height: 5rem;
+  width: 15em;
+  font-size: 2rem;
+  font-weight: 300; }
+
+#req-info {
+  height: 15rem;
+  background: #f3f3f3;
+  color: grey;
+  font-size: 1.2rem;
+  padding: 4rem;
+  box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1); }
+
 body {
-  background-color: #a6d5ce; }
+  background-color: #a6d5ce;
+  color: #051d4d; }
 
 #mainNav a {
-  color: #051d4d; }
+  color: #051d4d;
+  font-weight: 600; }
+
+#main-login {
+  height: 400px;
+  margin-top: 15rem; }
+
+input {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px; }
+
+.btn {
+  background: #051d4d;
+  color: lightgray; }
+  .btn:hover {
+    color: white; }
 
 .navbar-brand {
   font-size: 2rem; }
