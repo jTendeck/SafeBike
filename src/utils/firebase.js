@@ -39,16 +39,14 @@ if (btnLogin) {
 
 function saveUserData(role, email, password) {
     console.log(role, email, password);
-    
+        const auth = firebase.auth();
         //Sign in
         auth.createUserWithEmailAndPassword(email,password).then(function(firebaseUser) {
-        
-
-        auth.onAuthStateChanged(function(user) {
-        console.log(user.uid);
-        writeUserData(user.uid, email, role)
+            auth.onAuthStateChanged(function(user) {
+                console.log(user.uid);
+                writeUserData(user.uid, email, role)
+            });
         });
-    });
 
 }
 
@@ -60,7 +58,7 @@ function writeUserData(userId, email, role) {
       role
     });
 }
-  }
+  
 
 // Add Create Account Event
 if (btnCreateParticipant) {
