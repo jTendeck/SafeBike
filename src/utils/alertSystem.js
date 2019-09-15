@@ -102,7 +102,7 @@ function displayAlertType(alertID, alertPanel) {
     var ref = firebase.database().ref("alerts/" + alertID);
     ref.on("value", function(snap) {
         console.log("alert list" + snap.val());
-        alertPanel.innerHTML =  '<div class="alert alert-danger" role="alert"  style="font-size:20pt">Emergency received from ' +
+        alertPanel.innerHTML =  '<div class="alert alert-danger" role="alert"  style="font-size:2rem">Emergency received from ' +
         snap.val().email + '. Type: ' +
   snap.val().type + '</div>';
     });

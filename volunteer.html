@@ -44,6 +44,7 @@
         <div class="collapse navbar-collapse" id="navLinks">
           <ul class="navbar-nav">
             <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item" id="logOutButton"><a href="#" class="nav-link">Logout</a></li>
           </ul>
         </div>
     </nav>
@@ -60,7 +61,21 @@
         </div>
       </div>
     </div>
-
+    <script>
+      firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+            console.log(firebaseUser);
+            btnLogOut.style.display = "inline";
+            btnLogin.style.display = 'none';
+            btnSignUp.style.display = 'none';
+        } else {
+            btnLogOut.style.display = "none";
+            btnLogin.style.display = 'inline';
+            btnSignUp.style.display = 'inline';
+            console.log("Not logged in")
+        }
+    });
+      </script>
   <script>
   
     $("#btn-accept").on('click', replaceAccept);
