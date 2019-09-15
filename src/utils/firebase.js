@@ -36,11 +36,7 @@ if (btnLogin) {
             auth.onAuthStateChanged(function(user) {
                 var ref = firebase.database().ref("users/" + user.uid);
                 ref.once("value", function(snap) {
-                    if (snap.val().role == "volunteer") {
-                        window.document.location = 'volunteer.html';
-                    } else {
-                        window.document.location = 'biker.html';
-                    }
+                    window.document.location = 'dashboard.html';
                 });
             });
         });
@@ -68,11 +64,7 @@ function writeUserData(userId, email, role) {
       role
     });
 
-    if(role == "volunteer") {
-        window.document.location = 'volunteer.html';
-    } else {
-        window.document.location = 'biker.html';
-    }
+    window.document.location = 'dashboard.html';
 }
 
 // Add Create Account Event
