@@ -61,10 +61,21 @@
           <div class="my-5" id="req-info">
             <p>(There are no current requests for help. <br> Participant requests will automatically appear here.)</p>
           </div>
-          <button class="btn shadow-sm my-4" id="btn-accept" disabled="disabled">ACCEPT REQUEST</button>
+          <button class="btn shadow-sm mb-4" id="btn-accept disabled="disabled">ACCEPT REQUEST</button>
+          <button class="btn shadow-sm mb-4" id="btn-complete" disabled="disabled">COMPLETE REQUEST</button>
         </div>
       </div>
     </div>
+
+  <script>
+  
+    $("#btn-accept").on('click', replaceAccept);
+      function replaceAccept() {
+        $('#btn-accept').hide();
+        $('#btn-complete').show();
+      }
+
+  </script>
   
   <!-- additional style, map imports -->
   <script src="public/js/map.js"></script>

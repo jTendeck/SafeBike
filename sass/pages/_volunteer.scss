@@ -10,11 +10,15 @@
   width: 100%;
 }
 
-#btn-accept {
+#btn-accept, #btn-complete {
   height: 5rem;
   width: 15em;
   font-size: 2rem;
   font-weight: 300;
+}
+
+#btn-complete {
+  display: none;
 }
 
 #req-info {
