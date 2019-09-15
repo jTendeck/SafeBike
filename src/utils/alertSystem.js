@@ -54,7 +54,7 @@ function dbLoaded() {
     }
 
     function sendAlert(alertType) {
-        userAlertRef.push({type: alertType});
+        userAlertRef.push({type: alertType, email: currentUser.email});
     }
 };
 
@@ -102,7 +102,8 @@ function displayAlertType(alertID, alertPanel) {
     var ref = firebase.database().ref("alerts/" + alertID);
     ref.on("value", function(snap) {
         console.log("alert list" + snap.val());
-        alertPanel.innerHTML =  '<div class="alert alert-danger" role="alert"  style="font-size:20pt">Emergency Received! Type: ' +
+        alertPanel.innerHTML =  '<div class="alert alert-danger" role="alert"  style="font-size:20pt">Emergency received from ' +
+        snap.val().email + '. Type: ' +
   snap.val().type + '</div>';
     });
     
