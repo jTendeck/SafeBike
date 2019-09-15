@@ -50,22 +50,22 @@
      
    </head>
 
-   <div id="bikerView">
+   <!-- if currentUser.role = biker show(), hide() volunteer view -->
+   
    <body>
       <nav class="navbar navbar-light navbar-default navbar-expand-md fixed-top" id="mainNav">
-          <a href="#" class="navbar-brand" id="brand"> <i class="fas fa-bicycle"></i> SafeBike</a>
+          <a href="index.html" class="navbar-brand" id="brand"> <i class="fas fa-bicycle"></i> SafeBike</a>
           <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle-navbar">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navLinks">
             <ul class="navbar-nav">
-              <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
               <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Help</a></li>
             </ul>
           </div>
         </nav>
 
+    <div id="bikerView">
       <div class="container">
         
           <div class="justify-content-md-center white-container shadow">
@@ -73,19 +73,19 @@
                 <div id="mapid"></div>
                 
                   <div class="col-md text-center">
-                    <div>To request help press on one of the buttons.</div>
+                    <div id="firstMsg">To request help press on one of the buttons.</div>
                       <div id="confirm-msg"></div>
                       <div id="help-is-coming"></div>
                     
-                    <button id="med-btn" type="button" class="btn btn-primary biker-buttons my-4" value="medical">
+                    <button id="med-btn" type="button" class="btn btn-primary biker-buttons my-3" value="medical">
                         <i class="fas fa-briefcase-medical"></i>
                       Medical</button> 
-                    <button id="water-btn" type="button" class="btn btn-primary biker-buttons my-4" value="water">
+                    <button id="water-btn" type="button" class="btn btn-primary biker-buttons my-3" value="water">
                         <i class="fas fa-tint"></i>
                       Water
                     </button> 
 
-                    <button id="repair-btn" type="button" class="btn btn-primary biker-buttons my-4" value="repair">
+                    <button id="repair-btn" type="button" class="btn btn-primary biker-buttons my-3" value="repair">
                         <i class="fas fa-tools"></i>
                       Repair</button> 
 
@@ -113,8 +113,6 @@
             $('#confirm-msg').show();
            
           }
-
-
 
 // Water button was clicked
           $('#water-btn').on('click', addMsgWater);
@@ -188,19 +186,8 @@
     </div>
 
 
-
+<!-- if currentUser.role = volunteer show(), hide() biker view -->
     <div id="volunteerView">
-        <nav class="navbar navbar-light navbar-default navbar-expand-md fixed-top" id="mainNav">
-            <a href="#" class="navbar-brand" id="brand">SafeBike</a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle-navbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navLinks">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-              </ul>
-            </div>
-        </nav>
     
         <div class="container">
           <div class="shadow" id="map-container">
@@ -222,7 +209,7 @@
             $('#btn-accept').hide();
             $('#btn-complete').show();
           }
-    
+  
       </script>
       
       <!-- additional style, map imports -->

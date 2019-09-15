@@ -45,8 +45,8 @@ function dbLoaded() {
             sendAlert(emergencyType);
         });
     }
-
-	function sendAlert(alertType) {
+// var alert = "message to display";
+function sendAlert(alertType) {
         alertRef.push({type: alertType}).then(function() {
             console.log(alertType);
                 alertRef.on("value", function(snap) {
@@ -58,3 +58,4 @@ function dbLoaded() {
         });
     }
 };
+

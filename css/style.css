@@ -23,23 +23,61 @@
   margin-top: 5rem;
   border-radius: 1rem;
   overflow: hidden;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  padding-bottom: 2rem; }
 
 #confirm-btn, #cancel-btn, #ok-btn {
   display: none; }
 
 #confirm-btn {
-  background-color: green; }
+  background-color: #00cc00;
+  border-color: #00cc00; }
+  #confirm-btn:hover {
+    background-color: rgba(0, 204, 0, 0.8); }
 
 #cancel-btn {
-  background-color: red; }
+  background-color: #ff3300;
+  border-color: #ff3300; }
+  #cancel-btn:hover {
+    background-color: rgba(255, 51, 0, 0.8); }
 
 #help-is-coming {
-  display: none;
-  height: 2vh; }
+  display: none; }
 
 #confirm-mdg {
   display: none; }
+
+#ok-btn {
+  border-color: #00cc00;
+  background-color: #00cc00; }
+  #ok-btn:hover {
+    background-color: rgba(0, 204, 0, 0.8); }
+
+#firstMsg {
+  padding-top: 2rem; }
+
+#repair-btn {
+  margin-bottom: 2rem; }
+
+@media only screen and (min-width: 700px) {
+  .biker-buttons {
+    display: inline-block;
+    width: 32rem;
+    margin-right: 1.5rem; } }
+
+@media only screen and (min-width: 800px) {
+  .biker-buttons {
+    display: inline-block;
+    width: 15rem;
+    margin-right: 1.5rem; }
+  .white-container {
+    margin-top: 6rem; } }
+
+@media only screen and (min-width: 1000px) {
+  .biker-buttons {
+    display: inline-block;
+    width: 25rem;
+    margin-right: 1.5rem; } }
 
 #map-container {
   margin-top: 5rem;
@@ -142,12 +180,17 @@ body {
     color: white; }
 
 #mapid {
-  height: 40vh;
+  min-height: 35rem;
+  height: 55vh;
   width: 100%; }
 
 @media only screen and (min-width: 700px) {
   #mapid {
-    height: 50vh; } }
+    height: 55vh; } }
+
+@media only screen and (min-width: 1025px) {
+  #mapid {
+    height: 70vh; } }
 
 #mapid2 {
   height: 40vh;
