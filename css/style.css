@@ -2,11 +2,10 @@
   margin-right: 4rem;
   margin-left: 4rem;
   margin-top: 5rem;
-  align-items: center; }
+  margin-bottom: 4rem; }
 
 .biker-buttons {
-  display: block;
-  width: 20rem; }
+  display: inline-block; }
 
 .btn-primary {
   background-color: #051d4d;
@@ -16,7 +15,8 @@
     border-color: #a6d5ce; }
 
 .btn {
-  font-size: 2rem; }
+  font-size: 2rem;
+  text-transform: uppercase; }
 
 .white-container {
   background-color: white;
@@ -26,6 +26,16 @@
 
 #confirm-btn, #cancel-btn, #ok-btn {
   display: none; }
+
+#confirm-btn {
+  background-color: green; }
+
+#cancel-btn {
+  background-color: red; }
+
+#help-is-coming {
+  display: none;
+  height: 10vh; }
 
 #map-container {
   margin-top: 10rem;
@@ -94,6 +104,9 @@ html {
 body {
   background-color: #a6d5ce;
   font-size: 2rem; }
+
+.btn {
+  width: 25rem; }
 
 #mapid {
   height: 50vh;

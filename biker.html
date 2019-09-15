@@ -50,29 +50,26 @@
           <div class="justify-content-md-center white-container">
  
                 <div id="mapid"></div>
-                <div id="biker_help_btn" class="col text-center"> 
-
+                <div id="biker_help_btn"> 
+                  <div class="col-md text-center">
+                      <div id="confirm-msg"></div>
+                      <div id="help-is-coming"></div>
+                    
                     <button id="med-btn" type="button" class="btn btn-primary biker-buttons my-4">Medical</button>
                     <button id="water-btn" type="button" class="btn btn-primary biker-buttons my-4">Water</button>
                     <button id="repair-btn" type="button" class="btn btn-primary biker-buttons my-4">Repair</button>
-                    <button type="button" class="btn btn-secondary biker-buttons my-4s">My help requests</button>
+                    <button id="request-btn" type="button" class="btn btn-secondary biker-buttons my-4s">My requests</button>
 
                     
-                    <div id="confirm-msg"></div>
-                    <div id="help-is-coming"></div>
+                    
 
                     <button id="confirm-btn" type="button" class="btn btn-success biker-buttons my-4">Confirm</button>
                     <button id="cancel-btn" type="button" class="btn btn-danger biker-buttons my-4">Cancel</button>
                     <button id="ok-btn" type="button" class="btn btn-success biker-buttons my-4">Success</button>
+                  </div>
                 </div>
             </div>
           </div>
-          
-
-          
-
-        
-      
 
 
         
@@ -84,21 +81,25 @@
             $('#water-btn').hide();
             $('#repair-btn').hide();
             $('#med-btn').hide();
+            $('#request-btn').hide();
             $('#confirm-btn').show();
             $('#cancel-btn').show();
-          
+            
           }
+
 // Water button was clicked
           $('#water-btn').on('click', addMsgWater);
           function addMsgWater(){
             $('#confirm-msg').text("Please confirm your request for water.");
             $('#water-btn').hide();
             $('#repair-btn').hide();
+            $('#request-btn').hide();
             $('#med-btn').hide();
             $('#confirm-btn').show();
             $('#cancel-btn').show();
-          
+            $('ok-btn').hide();
           }
+
 //Repare button was clicked
           $('#repair-btn').on('click', addMsgRepair);
           function addMsgRepair(){
@@ -106,11 +107,11 @@
             $('#water-btn').hide();
             $('#repair-btn').hide();
             $('#med-btn').hide();
+            $('#request-btn').hide();
             $('#confirm-btn').show();
             $('#cancel-btn').show();
-          
           }
-
+// Cancel request button
         $('#cancel-btn').on('click', returnFuncCancel);
           function returnFuncCancel(){
             $('#confirm-msg').hide();
@@ -119,19 +120,20 @@
             $('#med-btn').show();
             $('#confirm-btn').hide();
             $('#cancel-btn').hide();
+            $('#request-btn').show();
 
           }
-          
-          $('#confirm-btn').on('click', returnFunc);
+// Confirm button clicked
+          $('#confirm-btn').on('click', returnFuncConfirm);
           function returnFuncConfirm(){
-            $('#help-is-coming').text("Help is on the way! Please sit tight a voluneer is going to be with you shortly");
+            $('#help-is-coming').text("Help is on the way! Please wait, a voluneer is going to be with you shortly");
             $('#confirm-msg').hide();
             $('#water-btn').show();
             $('#repair-btn').show();
             $('#med-btn').show();
             $('#confirm-btn').hide();
             $('#cancel-btn').hide();
-            
+            $('#request-btn').show();
           }
           
       </script>
