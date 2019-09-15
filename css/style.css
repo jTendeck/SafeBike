@@ -42,13 +42,13 @@
   display: none; }
 
 #map-container {
-  margin-top: 10rem;
+  margin-top: 5rem;
   background: white;
   height: 70rem;
-  border-radius: 1rem; }
+  border-radius: 1rem;
+  overflow: hidden; }
 
 #mapid {
-  border-radius: 1rem;
   width: 100%; }
 
 #btn-accept, #btn-complete {
@@ -121,12 +121,8 @@ hr {
   border: none; }
 
 .navbar {
-<<<<<<< HEAD
-  background-color: #a6d5ce; }
-=======
   background-color: #a6d5ce;
   font-family: Nunito; }
->>>>>>> dcf138e95e48f600f8d3f54d9dd10b4bb42db682
 
 html {
   font-size: 62.5%;
