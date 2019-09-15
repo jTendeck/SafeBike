@@ -43,7 +43,6 @@ function saveUserData(role, email, password) {
         //Sign in
         auth.createUserWithEmailAndPassword(email,password).then(function(firebaseUser) {
         
-
         auth.onAuthStateChanged(function(user) {
         console.log(user.uid);
         writeUserData(user.uid, email, role)
