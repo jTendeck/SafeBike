@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 #biker_help_btn {
   margin-right: 4rem;
   margin-left: 4rem;
@@ -74,14 +75,15 @@ input {
   width: 30rem;
   font-size: 1rem; }
 
-#loginButton, #signUpButton, #logOutButton {
-  height: 5rem;
-  width: 15em;
-  font-size: 2rem;
-  font-weight: 200; }
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(5, 29, 77, 0), rgba(5, 29, 77, 0.3), rgba(5, 29, 77, 0)); }
 
-#logOutButton {
-  display: none; }
+#loginButton, #signUpButton {
+  width: 7em;
+  font-weight: 200;
+  border-radius: 8px; }
 
 .navbar-brand {
   font-size: 2rem; }
@@ -96,15 +98,18 @@ input {
   background-color: #a6d5ce; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  font-family: 'Nunito', sans-serif; }
 
 body {
   background-color: #a6d5ce;
-  font-size: 2rem; }
+  font-size: 2rem;
+  font-family: 'Nunito', sans-serif; }
 
 .btn {
   background: #051d4d;
-  color: white; }
+  color: white;
+  font-weight: 200; }
   .btn:hover {
     background: #072a70;
     color: white; }

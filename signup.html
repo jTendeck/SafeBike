@@ -10,40 +10,64 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-
   <!-- firebase auth -->
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
+  <style>
+    #createVolunteer {
+      width: 7em;
+      font-weight: 200;
+      border-radius: 8px;
+    }
+
+    #createParticipant {
+      width: 7em;
+      font-weight: 200;
+      border-radius: 8px;
+    }
+  </style>
+
 </head>
 <body onload="firebase.auth().signOut()">
-
   <!-- navbar -->
   <div class="container">
     <nav class="navbar navbar-light navbar-default navbar-expand-md fixed-top" id="mainNav">
-      <a href="#" class="navbar-brand" id="brand">SafeBike</a>
+      <!-- <a href="#" class="navbar-brand" id="brand">SafeBike</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle-navbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navLinks">
         <ul class="navbar-nav">
-          <li class="nav-item"><a href="#" class="nav-link">DASHBOARD</a></li>
           <li class="nav-item"><a href="#" class="nav-link">ABOUT</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">HELP</a></li>
         </ul>
-      </div>
+      </div> -->
     </nav>
   </div>
-
   <!-- content -->
-  <div id="#signUpDiv">
-    <input type="email" placeholder="Email" id="emailField">
-    <input type="password" placeholder="Password" id="passwordField">
-    <div>I am a:</div>
-    <button class="btn" id="createVolunteer" value="volunteer">Volunteer</button>
-    <button class="btn" id="createParticipant" value="participant">Participant</button>
-  </div>
-
+  <div class="container">
+      <section class="login">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-sm-6 col-md-10 text-center" id="main-login">
+              <h1 class="display-2 my-5"><i class="fas fa-bicycle"></i><br>SafeBike</h1>
+              <hr>
+              <div class="row justify-content-center">
+                <div class="col-sm-8 col-md-10">
+                  <input class="shadow-sm" type="email" placeholder="Email" id="emailField">
+                  <input class="shadow-sm" type="password" placeholder="Password" id="passwordField">
+                  <div>Sign up as</div>
+                  <div class="d-flex justify-content-center pt-3">
+                    <button class="btn mx-3" id="createVolunteer" value="volunteer">Volunteer</button>
+                    <button class="btn mx-3" id="createParticipant" value="participant">Participant</button>
+                  </div>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
 <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>

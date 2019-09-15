@@ -22,14 +22,14 @@ input {
   font-size: 1rem;
 }
 
-#loginButton, #signUpButton, #logOutButton {
-  height: 5rem;
-  width: 15em;
-  font-size: 2rem;
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(5, 29, 77, 0), rgba(5, 29, 77, 0.3), rgba(5, 29, 77, 0));
+}
+
+#loginButton, #signUpButton {
+  width: 7em;
   font-weight: 200;
+  border-radius: 8px; 
 }
-
-#logOutButton {
-  display: none;
-}
-
