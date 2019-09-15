@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 function dbLoaded() {
 
-    const userAlertRef = database.ref("alerts/");
+    const alertRef = database.ref("alerts/");
     const medButton = document.getElementById("med-btn");
     const repairButton = document.getElementById("repair-btn");
     const waterButton = document.getElementById("water-btn");
@@ -46,17 +46,15 @@ function dbLoaded() {
         });
     }
 
-    function sendAlert(alertType) {
-        userAlertRef.push({type: alertType}).then(function() {
+	function sendAlert(alertType) {
+        alertRef.push({type: alertType}).then(function() {
             console.log(alertType);
-            if(alertPanel) {
-                
-                userAlertRef.on("value", function(snap) {
-                    
-                    let alert = JSON.stringify(snap.val().type);
+                alertRef.on("value", function(snap) {
+                    var keys = Object.keys(snap.val());
+                    var k = keys[keys.length - 1];
+                    alert = snap.val()[k].type;
                     alertPanel.innerHTML = alert;
                 })
-            }
         });
     }
 };
