@@ -41,27 +41,21 @@ function saveUserData(role, email, password) {
     console.log(role, email, password);
     
         //Sign in
-<<<<<<< HEAD
-        const promise = auth.createUserWithEmailAndPassword(email,password);
-        promise.catch(e => console.log(e.message));
-        setTimeout(writeUserData(email, role), 500);
-=======
         auth.createUserWithEmailAndPassword(email,password).then(function(firebaseUser) {
         
 
         auth.onAuthStateChanged(function(user) {
         console.log(user.uid);
-        writeUserData(auth.currentUser.uid, email, role)
+        writeUserData(user.uid, email, role)
         });
     });
 
->>>>>>> 0b6d4991e3187599939038c501b58d7a24b41fce
 }
 
-function writeUserData(email, role) {
-    
-    () => { firebase.database().ref('users/' + userId).set({
-      userId: auth.currentUser.uid,
+function writeUserData(userId, email, role) {
+    console.log("user" + userId)
+    firebase.database().ref('users/' + userId).set({
+      userId,
       email,
       role
     });

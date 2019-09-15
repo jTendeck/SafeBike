@@ -47,11 +47,14 @@
   border-radius: 1rem;
   width: 100%; }
 
-#btn-accept {
+#btn-accept, #btn-complete {
   height: 5rem;
   width: 15em;
   font-size: 2rem;
   font-weight: 300; }
+
+#btn-complete {
+  display: none; }
 
 #req-info {
   height: 15rem;
@@ -80,12 +83,6 @@ input {
   margin: 10px;
   width: 300px; }
 
-.btn {
-  background: #051d4d;
-  color: lightgray; }
-  .btn:hover {
-    color: white; }
-
 .navbar-brand {
   font-size: 2rem; }
 
@@ -106,7 +103,11 @@ body {
   font-size: 2rem; }
 
 .btn {
-  width: 25rem; }
+  background: #051d4d;
+  color: white; }
+  .btn:hover {
+    background: #072a70;
+    color: white; }
 
 #mapid {
   height: 50vh;
