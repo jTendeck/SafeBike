@@ -90,9 +90,6 @@ input {
   width: 300px; }
 
 #signUpDiv {
-<<<<<<< HEAD
-  background-color: red; }
-=======
   display: flex;
   align-items: center; }
 
@@ -104,7 +101,6 @@ input {
 
 .signup-buttons button {
   margin: 1rem; }
->>>>>>> 21fb11775b208a3194c50625a7281ff37989870d
 
 .navbar-brand {
   font-size: 2rem; }
@@ -116,7 +112,7 @@ input {
   border: none; }
 
 .navbar {
-  background-color: white; }
+  background-color: #a6d5ce; }
 
 html {
   font-size: 62.5%; }
