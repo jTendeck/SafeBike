@@ -60,14 +60,12 @@ function saveUserData(role, email, password) {
         //Sign in
         auth.createUserWithEmailAndPassword(email,password).then(function(firebaseUser) {
             auth.onAuthStateChanged(function(user) {
-                console.log(user.uid);
                 writeUserData(user.uid, email, role)
             });
         });
 }
 
 function writeUserData(userId, email, role) {
-    console.log("user" + userId)
     firebase.database().ref('users/' + userId).set({
       userId,
       email,
@@ -106,8 +104,3 @@ if (btnLogOut) {
         firebase.auth().signOut();
     });
 }
-
-console.log(window.location.href);
-
-// Realtime Listener
-console.log("Firebase loaded");
