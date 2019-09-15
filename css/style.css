@@ -83,6 +83,19 @@ input {
   margin: 10px;
   width: 300px; }
 
+#signUpDiv {
+  display: flex;
+  align-items: center; }
+
+.signup-inputs {
+  margin: 20rem 20rem 0rem 20rem; }
+
+.signup-buttons {
+  margin: 5rem; }
+
+.signup-buttons button {
+  margin: 1rem; }
+
 .navbar-brand {
   font-size: 2rem; }
 
