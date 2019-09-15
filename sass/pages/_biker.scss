@@ -1,3 +1,4 @@
+
 #biker_help_btn {
   margin:5rem;
   display:border-box;
@@ -28,6 +29,7 @@
     border-radius: 1rem;
     overflow: hidden;
     margin-bottom: 2rem;
+    padding-bottom: 2rem;
 }
 
 #confirm-btn, #cancel-btn, #ok-btn{
@@ -35,17 +37,70 @@
 }
 
 #confirm-btn {
-    background-color: green;
+    background-color: rgb(0, 204, 0);
+    border-color: rgb(0, 204, 0);
+    &:hover{
+        background-color: rgba(0, 204, 0, 0.8);
+    }
 }
 #cancel-btn {
-    background-color: red;
+    background-color: rgb(255, 51, 0);
+    border-color: rgb(255, 51, 0);
+    &:hover {
+        background-color: rgba(255, 51, 0, 0.8);
+    }
 }
 
 #help-is-coming {
     display: none;
-    height: 2vh;
 }
 #confirm-mdg{
     display: none;
 }
 
+#ok-btn {
+        border-color: rgb(0, 204, 0);
+        background-color: rgb(0, 204, 0);
+    &:hover{
+        background-color: rgba(0, 204, 0, 0.8);
+    }
+}
+
+#firstMsg {
+    padding-top: 2rem;
+}
+
+#repair-btn{
+    margin-bottom: 2rem;
+}
+@media only screen and (min-width: 700px) {
+    .biker-buttons {
+        display: inline-block;
+        width: 32rem;
+        margin-right: 1.5rem;
+    }
+
+      
+  }
+@media only screen and (min-width: 800px) {
+    .biker-buttons {
+        display: inline-block;
+        width: 15rem;
+        margin-right: 1.5rem;
+    }
+
+    .white-container{
+        margin-top: 6rem;
+    }
+      
+  }
+  
+  @media only screen and (min-width: 1000px) {
+    .biker-buttons {
+        display: inline-block;
+        width: 25rem;
+        margin-right: 1.5rem;
+    }
+
+      
+  }

@@ -1,13 +1,21 @@
 
 #mapid {
-  height: 40vh;
+  min-height: 35rem;
+  height: 55vh;
   width: 100%;
   }
 
 
 @media only screen and (min-width: 700px) {
   #mapid {
-    height: 50vh;
+    height: 55vh;
     
     }
+
+}
+
+@media only screen and (min-width: 1025px) {
+  #mapid {
+    height: 70vh;
+  }
 }
