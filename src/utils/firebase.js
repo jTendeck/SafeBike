@@ -39,20 +39,27 @@ if (btnLogin) {
 
 function saveUserData(role, email, password) {
     console.log(role, email, password);
-    const auth = firebase.auth();
+    
         //Sign in
-        const promise = auth.createUserWithEmailAndPassword(email,password);
-        promise.catch(e => console.log(e.message));
+        auth.createUserWithEmailAndPassword(email,password).then(function(firebaseUser) {
         
-        writeUserData(auth.currentUser.uid, email, role)
+
+        auth.onAuthStateChanged(function(user) {
+        console.log(user.uid);
+        writeUserData(user.uid, email, role)
+        });
+    });
+
 }
 
 function writeUserData(userId, email, role) {
+    console.log("user" + userId)
     firebase.database().ref('users/' + userId).set({
       userId,
       email,
       role
     });
+}
   }
 
 // Add Create Account Event

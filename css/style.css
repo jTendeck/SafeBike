@@ -1,3 +1,32 @@
+#biker_help_btn {
+  margin-right: 4rem;
+  margin-left: 4rem;
+  margin-top: 5rem;
+  align-items: center; }
+
+.biker-buttons {
+  display: block;
+  width: 20rem; }
+
+.btn-primary {
+  background-color: #051d4d;
+  border-color: #051d4d; }
+  .btn-primary:hover {
+    background-color: #a6d5ce;
+    border-color: #a6d5ce; }
+
+.btn {
+  font-size: 2rem; }
+
+.white-container {
+  background-color: white;
+  margin-top: 7rem;
+  border-radius: 1rem;
+  overflow: hidden; }
+
+#confirm-btn, #cancel-btn, #ok-btn {
+  display: none; }
+
 #map-container {
   margin-top: 10rem;
   background: white;
@@ -42,7 +71,7 @@ input {
   width: 300px; }
 
 .navbar-brand {
-  font-size: 2.5rem; }
+  font-size: 2rem; }
 
 .navbar-nav {
   font-size: 1.5rem; }
@@ -50,11 +79,15 @@ input {
 .navbar-toggler {
   border: none; }
 
+.navbar {
+  background-color: white; }
+
 html {
   font-size: 62.5%; }
 
 body {
-  background-color: #a6d5ce; }
+  background-color: #a6d5ce;
+  font-size: 2rem; }
 
 .btn {
   background: #051d4d;
@@ -64,7 +97,8 @@ body {
     color: white; }
 
 #mapid {
-  height: 30rem; }
+  height: 50vh;
+  width: 100%; }
 
 .leaflet-routing-container, .leaflet-routing-error {
   width: 320px;
@@ -72,7 +106,8 @@ body {
   padding-top: 4px;
   transition: all 0.2s ease;
   box-sizing: border-box;
-  display: none; }
+  display: none;
+  margin: 2rem; }
 
 .leaflet-control-container .leaflet-routing-container-hide {
   width: 32px;
