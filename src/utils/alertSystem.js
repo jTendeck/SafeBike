@@ -2,12 +2,6 @@ var currentUser;
 
 
 
-
-
-
-
-
-
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         const userAlertRef = firebase.database().ref("users/" + user.uid);
