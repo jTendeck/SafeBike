@@ -62,6 +62,18 @@ function writeUserData(userId, email, role) {
     }
 }
 
+// Add Create Account Event
+
+if (btnCreateParticipant) {
+  btnCreateParticipant.addEventListener('click', e => {
+    saveUserData(btnCreateParticipant.value, txtEmail.value, txtPassword.value);
+  });
+
+  btnCreateVolunteer.addEventListener('click', e => {
+      saveUserData(btnCreateVolunteer.value, txtEmail.value, txtPassword.value);
+  });
+}
+
 // Go to sign up page
 if (btnSignUp) {
     btnSignUp.addEventListener('click', e => {
