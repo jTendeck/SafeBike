@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 #biker_help_btn {
-  margin: 2rem; }
+  margin: 4rem; }
 
 .biker-buttons {
   display: inline-block;
   margin-right: 2rem;
   margin-left: 2rem;
-  width: 20rem; }
+  width: 25rem;
+  height: 5rem; }
 
 .btn-primary {
   background-color: #051d4d;
@@ -19,7 +20,7 @@
   font-size: 2rem; }
 
 .white-container {
-  background-color: whitesmoke;
+  background-color: white;
   margin-top: 2.5rem;
   border-radius: 1rem;
   overflow: hidden;
