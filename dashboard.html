@@ -50,6 +50,7 @@
      
    </head>
 
+   <!-- if currentUser.role = biker show(), hide() volunteer view -->
    <div id="bikerView">
    <body>
       <nav class="navbar navbar-light navbar-default navbar-expand-md fixed-top" id="mainNav">
@@ -113,8 +114,6 @@
             $('#confirm-msg').show();
            
           }
-
-
 
 // Water button was clicked
           $('#water-btn').on('click', addMsgWater);
@@ -187,7 +186,7 @@
     </div>
 
 
-
+<!-- if currentUser.role = volunteer show(), hide() biker view -->
     <div id="volunteerView">
         <nav class="navbar navbar-light navbar-default navbar-expand-md fixed-top" id="mainNav">
             <a href="#" class="navbar-brand" id="brand">SafeBike</a>
@@ -221,7 +220,7 @@
             $('#btn-accept').hide();
             $('#btn-complete').show();
           }
-    
+  
       </script>
       
       <!-- additional style, map imports -->
