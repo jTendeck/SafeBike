@@ -64,12 +64,8 @@
   <script>
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
-        console.log(firebaseUser);
-        btnLogOut.style.display = "inline";
-        btnLogin.style.display = 'none';
-        btnSignUp.style.display = 'none';
+        window.document.location = 'dashboard.html';
     } else {
-        btnLogOut.style.display = "none";
         btnLogin.style.display = 'inline';
         btnSignUp.style.display = 'inline';
         console.log("Not logged in")

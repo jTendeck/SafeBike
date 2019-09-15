@@ -51,18 +51,16 @@ function saveUserData(role, email, password) {
         const auth = firebase.auth();
         //Sign in
         auth.createUserWithEmailAndPassword(email,password).then(function(firebaseUser) {
-
             auth.onAuthStateChanged(function(user) {
-
-                if (user) {
-                    writeUserData(user.uid, email, role)
-                }
-                    else
-                        window.alert("This email is already in use.");
-                
+                window.document.location = 'dashboard.html';
+                writeUserData(user.uid, email, role)
             });
+
+            window.alert("this email is already taken.");
         });
+        
 }
+
 
 function writeUserData(userId, email, role) {
     firebase.database().ref('users/' + userId).set({
