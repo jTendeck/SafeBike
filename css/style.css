@@ -149,6 +149,14 @@ body {
   #mapid {
     height: 50vh; } }
 
+#mapid2 {
+  height: 40vh;
+  width: 100%; }
+
+@media only screen and (min-width: 700px) {
+  #mapid2 {
+    height: 50vh; } }
+
 .leaflet-routing-container, .leaflet-routing-error {
   width: 320px;
   background-color: white;
