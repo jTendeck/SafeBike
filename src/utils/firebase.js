@@ -39,7 +39,7 @@ if (btnLogin) {
 
 function saveUserData(role, email, password) {
     console.log(role, email, password);
-    const auth = firebase.auth();
+    
         //Sign in
         auth.createUserWithEmailAndPassword(email,password).then(function(firebaseUser) {
         
@@ -59,6 +59,7 @@ function writeUserData(userId, email, role) {
       email,
       role
     });
+}
   }
 
 // Add Create Account Event
