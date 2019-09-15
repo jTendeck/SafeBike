@@ -15,8 +15,6 @@ var firebaseConfig = {
 
 const database = firebase.database();
 
-const ref = database.ref("users/");
-
 const txtEmail = document.getElementById("emailField");
 const txtPassword = document.getElementById("passwordField");
 const btnLogin = document.getElementById("loginButton");
@@ -47,7 +45,6 @@ function saveUserData(role, email, password) {
                 writeUserData(user.uid, email, role)
             });
         });
-
 }
 
 function writeUserData(userId, email, role) {
@@ -57,8 +54,9 @@ function writeUserData(userId, email, role) {
       email,
       role
     });
+
+    window.document.location = 'biker.html';
 }
-  
 
 // Add Create Account Event
 if (btnCreateParticipant) {
