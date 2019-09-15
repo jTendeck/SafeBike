@@ -28,7 +28,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 console.log("null snap");
             } else {
                 console.log("not null snap");
-                console.log(snap.val());
+                console.log(snap.val().email);
             }
       });
     } else {

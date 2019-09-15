@@ -108,6 +108,4 @@ function addRoute(route, map) {
 
   console.log(routingControl);
 
-
-
 }

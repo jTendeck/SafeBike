@@ -84,7 +84,7 @@
 
       <div class="container">
         
-          <div class="justify-content-md-center white-container">
+          <div class="justify-content-md-center white-container shadow-lg">
  
                 <div id="mapid"></div>
                 <div id="biker_help_btn"> 
@@ -92,17 +92,24 @@
                       <div id="confirm-msg"></div>
                       <div id="help-is-coming"></div>
                     
-                    <button id="med-btn" type="button" class="btn btn-primary biker-buttons my-4">Medical</button>
-                    <button id="water-btn" type="button" class="btn btn-primary biker-buttons my-4">Water</button>
-                    <button id="repair-btn" type="button" class="btn btn-primary biker-buttons my-4">Repair</button>
-                    <button id="request-btn" type="button" class="btn btn-secondary biker-buttons my-4s">My requests</button>
+                    <button id="med-btn" type="button" class="btn btn-primary biker-buttons my-4">
+                        <i class="fas fa-briefcase-medical"></i>
+                      Medical</button> 
+                    <button id="water-btn" type="button" class="btn btn-primary biker-buttons my-4">
+                        <i class="fas fa-tint"></i>
+                      Water
+                    </button> 
 
-                    
-                    
+                    <button id="repair-btn" type="button" class="btn btn-primary biker-buttons my-4">
+                        <i class="fas fa-tools"></i>
+                      Repair</button> 
 
-                    <button id="confirm-btn" type="button" class="btn btn-success biker-buttons my-4">Confirm</button>
+
+
+                    <!-- <button id="request-btn" type="button" class="btn btn-secondary biker-buttons my-4s">My requests</button> -->
+                    <button id="confirm-btn" type="button" class="btn btn-success biker-buttons my-4">Confirm</button> 
                     <button id="cancel-btn" type="button" class="btn btn-danger biker-buttons my-4">Cancel</button>
-                    <button id="ok-btn" type="button" class="btn btn-success biker-buttons my-4">Success</button>
+                    <button id="ok-btn" type="button" class="btn btn-success biker-buttons my-4">Ok</button>
                   </div>
                 </div>
             </div>
@@ -114,38 +121,44 @@
         $('#med-btn').on('click', addMsgMed);
           function addMsgMed(){
             $('#confirm-msg').text("Please confirm your request for medical help.");
-            $('#water-btn').hide();
-            $('#repair-btn').hide();
-            $('#med-btn').hide();
-            $('#request-btn').hide();
+            $('#water-btn').toggle();
+            $('#repair-btn').toggle();
+            $('#med-btn').toggle();
+            $('#request-btn').toggle();
             $('#confirm-btn').show();
             $('#cancel-btn').show();
-            
+            $('#confirm-msg').show();
+           
           }
+
+
 
 // Water button was clicked
           $('#water-btn').on('click', addMsgWater);
           function addMsgWater(){
             $('#confirm-msg').text("Please confirm your request for water.");
-            $('#water-btn').hide();
-            $('#repair-btn').hide();
-            $('#request-btn').hide();
-            $('#med-btn').hide();
-            $('#confirm-btn').show();
-            $('#cancel-btn').show();
-            $('ok-btn').hide();
+            $('#water-btn').toggle();
+            $('#repair-btn').toggle();
+            $('#request-btn').toggle();
+            $('#med-btn').toggle();
+            $('#confirm-btn').toggle();
+            $('#cancel-btn').toggle();
+            $('ok-btn').toggle();
+            $('#confirm-msg').toggle();
           }
 
-//Repare button was clicked
+//Repair button was clicked
           $('#repair-btn').on('click', addMsgRepair);
           function addMsgRepair(){
             $('#confirm-msg').text("Please confirm your request for repair.");
-            $('#water-btn').hide();
-            $('#repair-btn').hide();
-            $('#med-btn').hide();
-            $('#request-btn').hide();
-            $('#confirm-btn').show();
-            $('#cancel-btn').show();
+            $('#confirm-msg').show();
+            $('#water-btn').toggle();
+            $('#repair-btn').toggle();
+            $('#med-btn').toggle();
+            $('#request-btn').toggle();
+            $('#confirm-btn').toggle();
+            $('#cancel-btn').toggle();
+
           }
 // Cancel request button
         $('#cancel-btn').on('click', returnFuncCancel);
@@ -162,14 +175,27 @@
 // Confirm button clicked
           $('#confirm-btn').on('click', returnFuncConfirm);
           function returnFuncConfirm(){
+            $('#help-is-coming').toggle();
             $('#help-is-coming').text("Help is on the way! Please wait, a voluneer is going to be with you shortly");
             $('#confirm-msg').hide();
+            $('#confirm-btn').hide();
+            $('#cancel-btn').hide();
+            $('#request-btn').show();
+            $('#ok-btn').show();
+          }
+
+// Ok button
+          $('#ok-btn').on('click', okFunc);
+          function okFunc(){
+            $('#help-is-coming').hide();
             $('#water-btn').show();
             $('#repair-btn').show();
             $('#med-btn').show();
             $('#confirm-btn').hide();
             $('#cancel-btn').hide();
-            $('#request-btn').show();
+            $('#ok-btn').toggle();
+            $('#request-btn').toggle();
+            
           }
           
       </script>
