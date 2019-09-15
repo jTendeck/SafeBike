@@ -27,15 +27,12 @@ const btnCreateVolunteer = document.getElementById("createVolunteer");
 
 // Add Login Event
 if (btnLogin) {
-    console.log("btnLogin");
     btnLogin.addEventListener('click', e => {
-        console.log("addEvent");
         const email = txtEmail.value;
         const password = txtPassword.value;
         const auth = firebase.auth();
         //Sign in
         auth.signInWithEmailAndPassword(email,password).then(function(user) {
-            console.log("signIN");
             auth.onAuthStateChanged(function(user) {
                 var ref = firebase.database().ref("users/" + user.uid);
                 ref.once("value", function(snap) {
@@ -55,7 +52,6 @@ if (btnLogin) {
 }
 
 function saveUserData(role, email, password) {
-    console.log(role, email, password);
         const auth = firebase.auth();
         //Sign in
         auth.createUserWithEmailAndPassword(email,password).then(function(firebaseUser) {
