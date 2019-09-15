@@ -22,7 +22,7 @@
 
 .white-container {
   background-color: white;
-  margin-top: 7rem;
+  margin-top: 2.5rem;
   border-radius: 1rem;
   overflow: hidden;
   margin-bottom: 2rem; }
@@ -90,9 +90,6 @@ input {
   width: 300px; }
 
 #signUpDiv {
-<<<<<<< HEAD
-  background-color: red; }
-=======
   display: flex;
   align-items: center; }
 
@@ -104,7 +101,6 @@ input {
 
 .signup-buttons button {
   margin: 1rem; }
->>>>>>> 21fb11775b208a3194c50625a7281ff37989870d
 
 .navbar-brand {
   font-size: 2rem; }
@@ -116,7 +112,8 @@ input {
   border: none; }
 
 .navbar {
-  background-color: white; }
+  background-color: #a6d5ce;
+  font-family: Nunito; }
 
 html {
   font-size: 62.5%; }
