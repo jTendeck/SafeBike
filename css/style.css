@@ -5,7 +5,10 @@
   margin-bottom: 4rem; }
 
 .biker-buttons {
-  display: inline-block; }
+  display: inline-block;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  width: 15rem; }
 
 .btn-primary {
   background-color: #051d4d;
@@ -15,14 +18,14 @@
     border-color: #a6d5ce; }
 
 .btn {
-  font-size: 2rem;
-  text-transform: uppercase; }
+  font-size: 2rem; }
 
 .white-container {
   background-color: white;
   margin-top: 7rem;
   border-radius: 1rem;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 2rem; }
 
 #confirm-btn, #cancel-btn, #ok-btn {
   display: none; }
@@ -36,6 +39,9 @@
 #help-is-coming {
   display: none;
   height: 10vh; }
+
+#confirm-mdg {
+  display: none; }
 
 #map-container {
   margin-top: 10rem;
@@ -82,6 +88,9 @@ input {
   padding: 10px;
   margin: 10px;
   width: 300px; }
+
+#signUpDiv {
+  background-color: red; }
 
 .navbar-brand {
   font-size: 2rem; }
